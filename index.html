@@ -1502,47 +1502,110 @@ h1 {
 
 @media(max-width:640px) { .mesa-grid,.mesa-roles,.mesa-timeline { grid-template-columns:1fr; } }
 
-
   /* ORGANIGRAMA: zoom nítido y movimiento con mouse */
+
   .organigram-viewport {
+
     position: relative;
+
     overflow: hidden;
+
     cursor: grab;
+
     user-select: none;
+
     touch-action: none;
+
     overscroll-behavior: contain;
+
   }
 
   .organigram-viewport.arrastrando {
+
     cursor: grabbing;
+
   }
 
   .organigram-canvas {
+
     position: absolute;
+
     top: 0;
+
     left: 0;
+
     display: block;
+
     min-width: 0;
+
     transition: none;
+
   }
 
   .organigram-canvas img {
+
     display: block;
+
     width: 1200px;
+
     max-width: none;
+
     height: auto;
+
     pointer-events: none;
+
     user-select: none;
+
     -webkit-user-drag: none;
+
   }
 
   .organigram-missing {
+
     position: absolute;
+
     inset: 0;
+
     max-width: none;
+
   }
 
-</style>
+
+  /* El menú móvil permanece oculto en pantallas de escritorio */
+  .mobile-menu { display:none; }
+
+  /* TABLA RASCI: estilos de la tabla de integrantes y funciones */
+  .rasci-encabezado { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:16px; }
+  .rasci-encabezado .mesa-subtitle { margin-bottom:6px; }
+  .rasci-descripcion { font-size:13px; color:var(--muted); margin:0; max-width:680px; }
+  .rasci-resumen { border-radius:100px; background:#e6f5f8; color:#006780; font-size:11px; font-weight:800; padding:7px 12px; }
+  .rasci-barra { display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-bottom:13px; }
+  .rasci-barra label { font-size:12px; font-weight:800; color:var(--navy); }
+  .rasci-barra input { flex:1; min-width:185px; background:white; border:1px solid var(--line); padding:11px 13px; border-radius:10px; color:var(--text); }
+  #contadorRasci { font-size:12px; color:var(--muted); }
+  .rasci-tabla-contenedor { width:100%; max-width:100%; overflow-x:auto; border:1px solid var(--line); border-radius:14px; background:white; box-shadow:var(--shadow); }
+  .rasci-tabla { width:100%; min-width:690px; border-collapse:separate; border-spacing:0; font-size:12px; }
+  .rasci-tabla caption { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+  .rasci-tabla thead th { text-align:center; padding:16px 12px; background:var(--blue); color:white; font-weight:800; line-height:1.4; border-bottom:2px solid #006780; }
+  .rasci-tabla thead th:first-child { text-align:left; min-width:280px; position:sticky; left:0; z-index:2; }
+  .rasci-tabla tbody th { text-align:left; font-weight:600; color:var(--text); background:white; position:sticky; left:0; z-index:1; min-width:280px; }
+  .rasci-tabla tbody th,.rasci-tabla tbody td { padding:11px 12px; border-bottom:1px solid var(--line); }
+  .rasci-tabla tbody td { text-align:center; background:white; min-width:95px; }
+  .rasci-tabla tbody tr:last-child th,.rasci-tabla tbody tr:last-child td { border-bottom:none; }
+  .rasci-tabla tbody tr:nth-child(even) th,.rasci-tabla tbody tr:nth-child(even) td { background:#f5fafc; }
+  .rasci-tabla tbody tr:hover th,.rasci-tabla tbody tr:hover td { background:#eaf6fa; }
+  .rasci-rol { display:inline-flex; align-items:center; justify-content:center; min-width:33px; padding:5px 8px; border-radius:7px; font-size:11px; font-weight:800; }
+  .rasci-r { background:#e2f6eb; color:#236b49; }
+  .rasci-a { background:#e4f3f8; color:#006780; }
+  .rasci-s { background:#fff1df; color:#955300; }
+  .rasci-i { background:#edf0f4; color:#596b7b; }
+  .rasci-ra { background:#fce4eb; color:#a1002a; }
+  .rasci-vacio { color:#aab8c0; }
+  .rasci-ayuda,.rasci-nota { color:var(--muted); font-size:12px; line-height:1.7; margin:12px 0 0; }
+  .rasci-nota { margin-top:6px; }
+  @media(max-width:640px) { .rasci-tabla { min-width:670px; } .rasci-tabla thead th:first-child,.rasci-tabla tbody th { min-width:245px; max-width:245px; } }
+
+ </style>
 
  </head>
 
@@ -1686,13 +1749,9 @@ h1 {
 
    </a>
 
-   <a href="#mesa">
+   <a href="#mesa">Mesa de Ayuda</a>
 
-   </a>
-
-   <a href="#organigrama">
-
-   </a>
+   <a href="#organigrama">Organigrama</a>
 
   </nav>
 
@@ -2292,7 +2351,246 @@ h1 {
 
   </div>
 
-  <div class="mesa-block">
+        <!-- MATRIZ RASCI DE LA UNIDAD DE INFORMÁTICA -->
+        <div class="mesa-block" id="tabla-rasci">
+          <div class="rasci-encabezado">
+            <div>
+              <h3 class="mesa-subtitle">Matriz RASCI de la Unidad de Informática</h3>
+              <p class="rasci-descripcion">Consulta las actividades y el rol asignado a cada integrante del equipo, según la matriz proporcionada.</p>
+            </div>
+            <span class="rasci-resumen">29 actividades · 4 integrantes</span>
+          </div>
+
+          <div class="rasci-barra">
+            <label for="buscarActividadRasci">Buscar actividad</label>
+            <input type="search" id="buscarActividadRasci" placeholder="Ej. impresoras, respaldos, ERP..." autocomplete="off">
+            <span id="contadorRasci" aria-live="polite">29 actividades</span>
+          </div>
+
+          <div class="rasci-tabla-contenedor" role="region" tabindex="0" aria-label="Tabla de actividades y responsabilidades RASCI">
+            <table class="rasci-tabla">
+              <caption>Distribución de responsabilidades de la Unidad de Informática</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Actividad</th>
+                  <th scope="col">Victor<br>Vergara</th>
+                  <th scope="col">Luis<br>Venegas</th>
+                  <th scope="col">Pablo<br>Abarca</th>
+                  <th scope="col">Sebastian<br>Arenas</th>
+                </tr>
+              </thead>
+              <tbody id="filasRasci">
+          <tr>
+            <th scope="row">Creación de respaldos</th>
+            <td><span class="rasci-rol rasci-a" title="Aprobador">A</span></td>
+            <td><span class="rasci-rol rasci-i" title="Informado">I</span></td>
+            <td><span class="rasci-rol rasci-r" title="Responsable">R</span></td>
+            <td><span class="rasci-rol rasci-s" title="Apoyo">S</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Formateo, instalación y configuración de sistema operativo</th>
+            <td><span class="rasci-rol rasci-a" title="Aprobador">A</span></td>
+            <td><span class="rasci-rol rasci-i" title="Informado">I</span></td>
+            <td><span class="rasci-rol rasci-r" title="Responsable">R</span></td>
+            <td><span class="rasci-rol rasci-s" title="Apoyo">S</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Instalación de software y aplicaciones</th>
+            <td><span class="rasci-rol rasci-a" title="Aprobador">A</span></td>
+            <td><span class="rasci-rol rasci-i" title="Informado">I</span></td>
+            <td><span class="rasci-rol rasci-r" title="Responsable">R</span></td>
+            <td><span class="rasci-rol rasci-s" title="Apoyo">S</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Instalación y/o traslado de punto de red</th>
+            <td><span class="rasci-rol rasci-a" title="Aprobador">A</span></td>
+            <td><span class="rasci-rol rasci-i" title="Informado">I</span></td>
+            <td><span class="rasci-rol rasci-r" title="Responsable">R</span></td>
+            <td><span class="rasci-rol rasci-s" title="Apoyo">S</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Instalación y/o reemplazo de hardware</th>
+            <td><span class="rasci-rol rasci-a" title="Aprobador">A</span></td>
+            <td><span class="rasci-rol rasci-i" title="Informado">I</span></td>
+            <td><span class="rasci-rol rasci-r" title="Responsable">R</span></td>
+            <td><span class="rasci-rol rasci-s" title="Apoyo">S</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Instalación y/o reemplazo de dispositivos periféricos</th>
+            <td><span class="rasci-rol rasci-a" title="Aprobador">A</span></td>
+            <td><span class="rasci-rol rasci-i" title="Informado">I</span></td>
+            <td><span class="rasci-rol rasci-r" title="Responsable">R</span></td>
+            <td><span class="rasci-rol rasci-s" title="Apoyo">S</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Revisión técnica de equipo informático</th>
+            <td><span class="rasci-rol rasci-a" title="Aprobador">A</span></td>
+            <td><span class="rasci-rol rasci-i" title="Informado">I</span></td>
+            <td><span class="rasci-rol rasci-r" title="Responsable">R</span></td>
+            <td><span class="rasci-rol rasci-s" title="Apoyo">S</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Emisión de informe de baja o traslado de equipo informático</th>
+            <td><span class="rasci-rol rasci-i" title="Informado">I</span></td>
+            <td><span class="rasci-rol rasci-a" title="Aprobador">A</span></td>
+            <td><span class="rasci-rol rasci-r" title="Responsable">R</span></td>
+            <td><span class="rasci-rol rasci-s" title="Apoyo">S</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Creación de especificaciones técnicas y revisión de ofertas</th>
+            <td><span class="rasci-rol rasci-i" title="Informado">I</span></td>
+            <td><span class="rasci-rol rasci-a" title="Aprobador">A</span></td>
+            <td><span class="rasci-rol rasci-r" title="Responsable">R</span></td>
+            <td><span class="rasci-rol rasci-s" title="Apoyo">S</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Resolución de problemas de impresora</th>
+            <td><span class="rasci-rol rasci-a" title="Aprobador">A</span></td>
+            <td><span class="rasci-rol rasci-i" title="Informado">I</span></td>
+            <td><span class="rasci-rol rasci-r" title="Responsable">R</span></td>
+            <td><span class="rasci-rol rasci-s" title="Apoyo">S</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Resolución de problemas de computadores y aplicaciones</th>
+            <td><span class="rasci-rol rasci-a" title="Aprobador">A</span></td>
+            <td><span class="rasci-rol rasci-i" title="Informado">I</span></td>
+            <td><span class="rasci-rol rasci-r" title="Responsable">R</span></td>
+            <td><span class="rasci-rol rasci-s" title="Apoyo">S</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Resolución de problemas de dispositivos de red</th>
+            <td><span class="rasci-rol rasci-a" title="Aprobador">A</span></td>
+            <td><span class="rasci-rol rasci-r" title="Responsable">R</span></td>
+            <td><span class="rasci-rol rasci-s" title="Apoyo">S</span></td>
+            <td><span class="rasci-rol rasci-s" title="Apoyo">S</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Resolución de problemas con sistemas ERP</th>
+            <td><span class="rasci-rol rasci-ra" title="Responsable y aprobador">RA</span></td>
+            <td><span class="rasci-rol rasci-s" title="Apoyo">S</span></td>
+            <td><span class="rasci-rol rasci-s" title="Apoyo">S</span></td>
+            <td><span class="rasci-rol rasci-s" title="Apoyo">S</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Creación de cuenta de Microsoft 365</th>
+            <td><span class="rasci-rol rasci-a" title="Aprobador">A</span></td>
+            <td><span class="rasci-rol rasci-i" title="Informado">I</span></td>
+            <td><span class="rasci-rol rasci-r" title="Responsable">R</span></td>
+            <td><span class="rasci-rol rasci-s" title="Apoyo">S</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Modificación de cuenta de Microsoft 365</th>
+            <td><span class="rasci-rol rasci-a" title="Aprobador">A</span></td>
+            <td><span class="rasci-rol rasci-i" title="Informado">I</span></td>
+            <td><span class="rasci-rol rasci-r" title="Responsable">R</span></td>
+            <td><span class="rasci-rol rasci-s" title="Apoyo">S</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Eliminación de cuenta de Microsoft 365</th>
+            <td><span class="rasci-rol rasci-a" title="Aprobador">A</span></td>
+            <td><span class="rasci-rol rasci-i" title="Informado">I</span></td>
+            <td><span class="rasci-rol rasci-r" title="Responsable">R</span></td>
+            <td><span class="rasci-rol rasci-s" title="Apoyo">S</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Asistencia a usuarios sobre aplicaciones y servicios municipales</th>
+            <td><span class="rasci-rol rasci-i" title="Informado">I</span></td>
+            <td><span class="rasci-rol rasci-a" title="Aprobador">A</span></td>
+            <td><span class="rasci-rol rasci-r" title="Responsable">R</span></td>
+            <td><span class="rasci-rol rasci-s" title="Apoyo">S</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Creación de cuenta de correo electrónico</th>
+            <td><span class="rasci-rol rasci-a" title="Aprobador">A</span></td>
+            <td><span class="rasci-rol rasci-r" title="Responsable">R</span></td>
+            <td class="rasci-vacio" aria-label="No indicado">—</td>
+            <td class="rasci-vacio" aria-label="No indicado">—</td>
+          </tr>
+          <tr>
+            <th scope="row">Modificación de cuenta de correo electrónico</th>
+            <td><span class="rasci-rol rasci-a" title="Aprobador">A</span></td>
+            <td><span class="rasci-rol rasci-r" title="Responsable">R</span></td>
+            <td class="rasci-vacio" aria-label="No indicado">—</td>
+            <td class="rasci-vacio" aria-label="No indicado">—</td>
+          </tr>
+          <tr>
+            <th scope="row">Eliminación de cuenta de correo electrónico</th>
+            <td><span class="rasci-rol rasci-a" title="Aprobador">A</span></td>
+            <td><span class="rasci-rol rasci-r" title="Responsable">R</span></td>
+            <td class="rasci-vacio" aria-label="No indicado">—</td>
+            <td class="rasci-vacio" aria-label="No indicado">—</td>
+          </tr>
+          <tr>
+            <th scope="row">Creación de acceso a sistemas ERP</th>
+            <td><span class="rasci-rol rasci-ra" title="Responsable y aprobador">RA</span></td>
+            <td><span class="rasci-rol rasci-s" title="Apoyo">S</span></td>
+            <td class="rasci-vacio" aria-label="No indicado">—</td>
+            <td class="rasci-vacio" aria-label="No indicado">—</td>
+          </tr>
+          <tr>
+            <th scope="row">Modificación de acceso a sistemas ERP</th>
+            <td><span class="rasci-rol rasci-ra" title="Responsable y aprobador">RA</span></td>
+            <td><span class="rasci-rol rasci-s" title="Apoyo">S</span></td>
+            <td class="rasci-vacio" aria-label="No indicado">—</td>
+            <td class="rasci-vacio" aria-label="No indicado">—</td>
+          </tr>
+          <tr>
+            <th scope="row">Eliminación de acceso a sistemas ERP</th>
+            <td><span class="rasci-rol rasci-ra" title="Responsable y aprobador">RA</span></td>
+            <td><span class="rasci-rol rasci-s" title="Apoyo">S</span></td>
+            <td class="rasci-vacio" aria-label="No indicado">—</td>
+            <td class="rasci-vacio" aria-label="No indicado">—</td>
+          </tr>
+          <tr>
+            <th scope="row">Formulación de licitaciones</th>
+            <td><span class="rasci-rol rasci-ra" title="Responsable y aprobador">RA</span></td>
+            <td><span class="rasci-rol rasci-s" title="Apoyo">S</span></td>
+            <td class="rasci-vacio" aria-label="No indicado">—</td>
+            <td class="rasci-vacio" aria-label="No indicado">—</td>
+          </tr>
+          <tr>
+            <th scope="row">Solicitud de compra ágil</th>
+            <td><span class="rasci-rol rasci-a" title="Aprobador">A</span></td>
+            <td><span class="rasci-rol rasci-r" title="Responsable">R</span></td>
+            <td class="rasci-vacio" aria-label="No indicado">—</td>
+            <td class="rasci-vacio" aria-label="No indicado">—</td>
+          </tr>
+          <tr>
+            <th scope="row">Solicitud de correo masivo</th>
+            <td><span class="rasci-rol rasci-ra" title="Responsable y aprobador">RA</span></td>
+            <td><span class="rasci-rol rasci-s" title="Apoyo">S</span></td>
+            <td class="rasci-vacio" aria-label="No indicado">—</td>
+            <td class="rasci-vacio" aria-label="No indicado">—</td>
+          </tr>
+          <tr>
+            <th scope="row">Solicitud de acceso a páginas o servicios web restringidos</th>
+            <td><span class="rasci-rol rasci-ra" title="Responsable y aprobador">RA</span></td>
+            <td><span class="rasci-rol rasci-s" title="Apoyo">S</span></td>
+            <td class="rasci-vacio" aria-label="No indicado">—</td>
+            <td class="rasci-vacio" aria-label="No indicado">—</td>
+          </tr>
+          <tr>
+            <th scope="row">Creación y gestión de proyectos</th>
+            <td><span class="rasci-rol rasci-ra" title="Responsable y aprobador">RA</span></td>
+            <td><span class="rasci-rol rasci-s" title="Apoyo">S</span></td>
+            <td class="rasci-vacio" aria-label="No indicado">—</td>
+            <td class="rasci-vacio" aria-label="No indicado">—</td>
+          </tr>
+          <tr>
+            <th scope="row">Administración de contratos</th>
+            <td><span class="rasci-rol rasci-ra" title="Responsable y aprobador">RA</span></td>
+            <td><span class="rasci-rol rasci-s" title="Apoyo">S</span></td>
+            <td class="rasci-vacio" aria-label="No indicado">—</td>
+            <td class="rasci-vacio" aria-label="No indicado">—</td>
+          </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="rasci-ayuda">R: responsable · A: aprobador · S: apoyo · C: consultado · I: informado · RA: responsable y aprobador · —: sin asignación indicada en el documento.</p>
+          <p class="rasci-nota">Fuente: «Matriz RASCI Unidad de informática», páginas 1–3. Verificar vigencia y autorización antes de publicar los nombres y las responsabilidades.</p>
+        </div>
+
+<div class="mesa-block">
 
     <h3 class="mesa-subtitle">6. Unidades con atención prioritaria</h3>
 
@@ -2533,173 +2831,319 @@ h1 {
     const navLinks=Array.from(document.querySelectorAll('.sidebar .nav-link'));const sections=Array.from(document.querySelectorAll('main section, main#inicio'));const observer=new IntersectionObserver(entries=>{const visible=entries.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];if(!visible)return;navLinks.forEach(link=>link.classList.toggle('active',link.getAttribute('href')==='#'+visible.target.id))},{rootMargin:'-15% 0px -60% 0px',threshold:[0,.1,.4]});sections.forEach(s=>observer.observe(s));
 
     // ORGANIGRAMA INTERACTIVO
+
     // Se cambia el tamaño real del SVG, no se usa scale() para el zoom.
+
     // Así el navegador vuelve a dibujar los textos y líneas del SVG.
+
     const canvas = document.getElementById('organigramCanvas');
+
     const image = document.getElementById('organigramImage');
+
     const missing = document.getElementById('missingOrganigram');
+
     const viewport = document.getElementById('organigramViewport');
 
     const zoomMinimo = 0.15;
+
     const zoomMaximo = 5;
+
     let zoom = 1;
+
     let anchoOriginal = 0;
+
     let altoOriginal = 0;
+
     let posicionX = 0;
+
     let posicionY = 0;
+
     let arrastrando = false;
+
     let mouseX = 0;
+
     let mouseY = 0;
 
     function limitarMovimiento() {
+
       const ancho = anchoOriginal * zoom;
+
       const alto = altoOriginal * zoom;
+
       const margen = 45;
 
       if (ancho <= viewport.clientWidth) {
+
         posicionX = (viewport.clientWidth - ancho) / 2;
+
       } else {
+
         posicionX = Math.max(viewport.clientWidth - ancho - margen,
+
           Math.min(margen, posicionX));
+
       }
 
       if (alto <= viewport.clientHeight) {
+
         posicionY = (viewport.clientHeight - alto) / 2;
+
       } else {
+
         posicionY = Math.max(viewport.clientHeight - alto - margen,
+
           Math.min(margen, posicionY));
+
       }
+
     }
 
     function dibujarOrganigrama() {
+
       if (!anchoOriginal || !altoOriginal) return;
 
       const nuevoAncho = anchoOriginal * zoom;
+
       const nuevoAlto = altoOriginal * zoom;
 
       // Cambiar el ancho real evita que el SVG pierda definición al ampliarse.
+
       if (image.style.width !== nuevoAncho + 'px') {
+
         image.style.width = nuevoAncho + 'px';
+
         canvas.style.width = nuevoAncho + 'px';
+
         canvas.style.height = nuevoAlto + 'px';
+
       }
 
       // Se mueve mediante left/top, sin usar transform ni scale.
+
       canvas.style.left = Math.round(posicionX) + 'px';
+
       canvas.style.top = Math.round(posicionY) + 'px';
+
     }
 
     function cambiarZoom(nuevoZoom, cursorX, cursorY) {
+
       if (!anchoOriginal) return;
+
       cursorX = cursorX ?? viewport.clientWidth / 2;
+
       cursorY = cursorY ?? viewport.clientHeight / 2;
 
       const zoomAnterior = zoom;
+
       zoom = Math.max(zoomMinimo, Math.min(zoomMaximo, nuevoZoom));
+
       const factor = zoom / zoomAnterior;
 
       // Mantiene el punto bajo el mouse mientras se acerca o se aleja.
+
       posicionX = cursorX - (cursorX - posicionX) * factor;
+
       posicionY = cursorY - (cursorY - posicionY) * factor;
 
       limitarMovimiento();
+
       dibujarOrganigrama();
+
     }
 
     function restaurarVista() {
+
       if (!anchoOriginal) return;
+
       // Mostrar el diagrama completo dentro del recuadro.
+
       zoom = Math.max(zoomMinimo, Math.min(1,
+
         (viewport.clientWidth - 36) / anchoOriginal,
+
         (viewport.clientHeight - 36) / altoOriginal));
+
       posicionX = (viewport.clientWidth - anchoOriginal * zoom) / 2;
+
       posicionY = (viewport.clientHeight - altoOriginal * zoom) / 2;
+
       limitarMovimiento();
+
       dibujarOrganigrama();
+
     }
 
     // Rueda: zoom hacia donde está el puntero.
+
     viewport.addEventListener('wheel', function(evento) {
+
       if (!anchoOriginal) return;
+
       evento.preventDefault();
+
       const rectangulo = viewport.getBoundingClientRect();
+
       const x = evento.clientX - rectangulo.left - viewport.clientLeft;
+
       const y = evento.clientY - rectangulo.top - viewport.clientTop;
+
       const delta = evento.deltaY * (
+
         evento.deltaMode === 1 ? 16 :
+
         evento.deltaMode === 2 ? viewport.clientHeight : 1
+
       );
+
       cambiarZoom(zoom * Math.exp(-delta * 0.0015), x, y);
+
     }, { passive: false });
 
     // Clic izquierdo mantenido: arrastrar.
+
     viewport.addEventListener('pointerdown', function(evento) {
+
       if (!anchoOriginal || evento.button !== 0) return;
+
       arrastrando = true;
+
       mouseX = evento.clientX;
+
       mouseY = evento.clientY;
+
       viewport.classList.add('arrastrando');
+
       viewport.setPointerCapture(evento.pointerId);
+
     });
 
     viewport.addEventListener('pointermove', function(evento) {
+
       if (!arrastrando) return;
+
       posicionX += evento.clientX - mouseX;
+
       posicionY += evento.clientY - mouseY;
+
       mouseX = evento.clientX;
+
       mouseY = evento.clientY;
+
       limitarMovimiento();
+
       dibujarOrganigrama();
+
     });
 
     function terminarArrastre() {
+
       arrastrando = false;
+
       viewport.classList.remove('arrastrando');
+
     }
+
     viewport.addEventListener('pointerup', terminarArrastre);
+
     viewport.addEventListener('pointercancel', terminarArrastre);
+
     viewport.addEventListener('lostpointercapture', terminarArrastre);
 
     // Conservar los botones que ya existían.
+
     document.getElementById('zoomIn').addEventListener('click', function() {
+
       cambiarZoom(zoom * 1.2);
+
     });
+
     document.getElementById('zoomOut').addEventListener('click', function() {
+
       cambiarZoom(zoom / 1.2);
+
     });
+
     document.getElementById('resetView').addEventListener('click', restaurarVista);
 
     // Leer las dimensiones iniciales del SVG una sola vez.
+
     function imagenCargada() {
+
       if (!image.naturalWidth) return;
+
       canvas.style.left = '0px';
+
       canvas.style.top = '0px';
+
       image.style.width = '1200px';
+
       anchoOriginal = image.getBoundingClientRect().width;
+
       altoOriginal = image.getBoundingClientRect().height;
+
       missing.style.display = 'none';
+
       canvas.style.display = 'block';
+
       restaurarVista();
+
     }
+
     image.addEventListener('load', imagenCargada);
+
     image.addEventListener('error', function() {
+
       anchoOriginal = 0;
+
       canvas.style.display = 'none';
+
       missing.style.display = 'flex';
+
     });
+
     if (image.complete) {
+
       if (image.naturalWidth) imagenCargada();
+
       else {
+
         canvas.style.display = 'none';
+
         missing.style.display = 'flex';
+
       }
+
     }
 
     window.addEventListener('resize', function() {
+
       if (anchoOriginal) restaurarVista();
+
     });
 
-  </script>
+  
+  // TABLA RASCI: permite buscar una actividad sin cambiar la matriz.
+  const buscarActividadRasci = document.getElementById('buscarActividadRasci');
+  const filasRasci = document.querySelectorAll('#filasRasci tr');
+  const contadorRasci = document.getElementById('contadorRasci');
+
+  if (buscarActividadRasci && contadorRasci) {
+    buscarActividadRasci.addEventListener('input', function() {
+      const texto = this.value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+      let visibles = 0;
+      filasRasci.forEach(function(fila) {
+        const actividad = fila.querySelector('th').textContent.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        const coincide = actividad.includes(texto);
+        fila.hidden = !coincide;
+        fila.style.display = coincide ? '' : 'none';
+        if (coincide) visibles++;
+      });
+      contadorRasci.textContent = visibles + (visibles === 1 ? ' actividad' : ' actividades');
+    });
+  }
+
+ </script>
 
  </body>
 
