@@ -1,0 +1,2706 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+ <head>
+
+  <meta charset="utf-8"/>
+
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+
+  <meta content="#008aab" name="theme-color"/>
+
+  <meta content="Manual de inducción y catálogo de servicios informáticos de la Municipalidad de Machalí." name="description"/>
+
+  <title>
+
+   Manual de Inducción TI | Municipalidad de Machalí
+
+  </title>
+
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+
+  <style>
+
+   :root {
+
+    --navy:#103a50;
+
+    --navy-dark:#09283a;
+
+    --blue:#008aab;
+
+    --orange:#f38600;
+
+    --red:#d70036;
+
+    --text:#233547;
+
+    --muted:#627486;
+
+    --line:#e3eaf0;
+
+    --surface:#fff;
+
+    --bg:#f3f7fa;
+
+    --shadow:0 12px 36px rgba(10,48,69,.075);
+
+    --radius:18px;
+
+    --sidebar:258px}
+
+    * {
+
+    box-sizing:border-box}
+
+html {
+
+    scroll-behavior:smooth;
+
+    scroll-padding-top:25px}
+
+body {
+
+    margin:0;
+
+    font-family:'DM Sans',sans-serif;
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    line-height:1.65}
+
+button,input {
+
+    font:inherit}
+
+button {
+
+    cursor:pointer}
+
+a {
+
+    color:inherit;
+
+    text-decoration:none}
+
+a:focus-visible,button:focus-visible,input:focus-visible {
+
+    outline:3px solid var(--orange);
+
+    outline-offset:3px}
+
+::selection {
+
+    background:#bce8f2}
+
+    .sidebar {
+
+    position:fixed;
+
+    inset:0 auto 0 0;
+
+    width:var(--sidebar);
+
+    background:var(--navy-dark);
+
+    color:white;
+
+    display:flex;
+
+    flex-direction:column;
+
+    padding:28px 19px;
+
+    z-index:20;
+
+    overflow-y:auto}
+
+.brand {
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:6px 8px 28px;
+
+    border-bottom:1px solid #ffffff20}
+
+.brand-icon {
+
+    height:48px;
+
+    width:48px;
+
+    border-radius:14px;
+
+    background:linear-gradient(140deg,var(--blue),#15b5c3);
+
+    display:grid;
+
+    place-items:center;
+
+    font-weight:800;
+
+    letter-spacing:-1px;
+
+    font-size:19px;
+
+    flex:none}
+
+.brand strong {
+
+    font:800 15px/1.3 Manrope,sans-serif;
+
+    display:block}
+
+.brand small {
+
+    display:block;
+
+    color:#acc2cd;
+
+    font-size:11px;
+
+    margin-top:2px}
+
+.sidebar-label {
+
+    color:#89a9b8;
+
+    font-size:10px;
+
+    letter-spacing:.17em;
+
+    font-weight:800;
+
+    padding:26px 12px 11px}
+
+.nav-link {
+
+    display:flex;
+
+    align-items:center;
+
+    gap:13px;
+
+    padding:13px 14px;
+
+    border-radius:11px;
+
+    font-weight:600;
+
+    font-size:13px;
+
+    color:#c4d8e1;
+
+    transition:.2s}
+
+.nav-link:hover,.nav-link.active {
+
+    color:#fff;
+
+    background:#ffffff18}
+
+.nav-link.active {
+
+    box-shadow:inset 3px 0 var(--orange)}
+
+.nav-num {
+
+    width:26px;
+
+    height:26px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:8px;
+
+    background:#ffffff12;
+
+    font-size:11px}
+
+.sidebar-foot {
+
+    margin-top:auto;
+
+    padding:23px 12px 6px;
+
+    font-size:11px;
+
+    color:#8faab8;
+
+    border-top:1px solid #ffffff20}
+
+    .mobile-top {
+
+    display:none}
+
+.main {
+
+    margin-left:var(--sidebar);
+
+    min-width:0}
+
+.content {
+
+    max-width:1250px;
+
+    margin:0 auto;
+
+    padding:0 52px 68px}
+
+.hero {
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:linear-gradient(115deg,#0d374f 0%,#10576a 73%,#087e98 130%);
+
+    color:#fff;
+
+    padding:73px max(52px,calc((100% - 1146px)/2)) 82px}
+
+.hero:before,.hero:after {
+
+    content:"";
+
+    position:absolute;
+
+    border:1px solid #ffffff20;
+
+    border-radius:50%;
+
+    height:520px;
+
+    width:520px;
+
+    right:-145px;
+
+    top:-270px}
+
+.hero:after {
+
+    height:340px;
+
+    width:340px;
+
+    top:80px;
+
+    right:-125px}
+
+.hero-content {
+
+    position:relative;
+
+    z-index:1;
+
+    max-width:700px}
+
+.eyebrow {
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:9px;
+
+    color:#c6ecf2;
+
+    letter-spacing:.13em;
+
+    text-transform:uppercase;
+
+    font-size:11px;
+
+    font-weight:800}
+
+.eyebrow:before {
+
+    content:"";
+
+    width:22px;
+
+    height:2px;
+
+    background:var(--orange)}
+
+h1,h2,h3 {
+
+    font-family:Manrope,sans-serif;
+
+    line-height:1.28}
+
+h1 {
+
+    font-size:clamp(34px,4vw,54px);
+
+    letter-spacing:-.05em;
+
+    margin:18px 0 17px;
+
+    font-weight:800}
+
+.hero p {
+
+    color:#d7e6ec;
+
+    font-size:16px;
+
+    max-width:620px}
+
+.hero-actions {
+
+    display:flex;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+
+    margin-top:29px}
+
+.btn {
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    border-radius:10px;
+
+    padding:12px 19px;
+
+    font-size:13px;
+
+    font-weight:800;
+
+    border:1px solid transparent;
+
+    transition:transform .2s,background .2s}
+
+.btn:hover {
+
+    transform:translateY(-2px)}
+
+.btn-primary {
+
+    background:var(--orange);
+
+    color:#172e3b}
+
+.btn-ghost {
+
+    border-color:#ffffff5c;
+
+    color:#fff}
+
+.hero-index {
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-top:-28px;
+
+    position:relative;
+
+    z-index:2}
+
+.index-box {
+
+    flex:1;
+
+    min-width:180px;
+
+    background:#fff;
+
+    border:1px solid var(--line);
+
+    padding:17px 20px;
+
+    border-radius:14px;
+
+    box-shadow:var(--shadow)}
+
+.index-box strong {
+
+    display:block;
+
+    color:var(--navy);
+
+    font:800 22px Manrope,sans-serif}
+
+.index-box span {
+
+    font-size:12px;
+
+    color:var(--muted)}
+
+    .section {
+
+    padding-top:77px;
+
+    scroll-margin-top:15px}
+
+.section-head {
+
+    display:flex;
+
+    align-items:flex-start;
+
+    justify-content:space-between;
+
+    gap:16px;
+
+    margin-bottom:28px}
+
+.kicker {
+
+    font-size:11px;
+
+    color:var(--blue);
+
+    font-weight:800;
+
+    letter-spacing:.14em;
+
+    text-transform:uppercase}
+
+.section h2 {
+
+    font-size:clamp(25px,2.6vw,33px);
+
+    letter-spacing:-.04em;
+
+    color:var(--navy);
+
+    margin:6px 0 10px}
+
+.intro {
+
+    font-size:14px;
+
+    color:var(--muted);
+
+    max-width:770px;
+
+    margin:0}
+
+.divider-line {
+
+    width:55px;
+
+    height:4px;
+
+    border-radius:3px;
+
+    background:var(--orange);
+
+    margin-top:18px}
+
+.cards {
+
+    display:grid;
+
+    grid-template-columns:repeat(2,minmax(0,1fr));
+
+    gap:18px}
+
+.card {
+
+    background:var(--surface);
+
+    border:1px solid var(--line);
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+    padding:25px;
+
+    transition:transform .2s,box-shadow .2s}
+
+.card:hover {
+
+    transform:translateY(-3px);
+
+    box-shadow:0 18px 44px #0a304518}
+
+.card.wide {
+
+    grid-column:1/-1}
+
+.card-head {
+
+    display:flex;
+
+    gap:13px;
+
+    align-items:center;
+
+    margin-bottom:13px}
+
+.icon-box {
+
+    width:42px;
+
+    height:42px;
+
+    display:grid;
+
+    place-items:center;
+
+    flex:none;
+
+    border-radius:12px;
+
+    background:#e9f7fb;
+
+    color:var(--blue);
+
+    font-size:19px}
+
+.icon-box.orange {
+
+    background:#fff2e2;
+
+    color:#cd7000}
+
+.icon-box.red {
+
+    background:#ffedf1;
+
+    color:var(--red)}
+
+.card h3 {
+
+    font-size:16px;
+
+    letter-spacing:-.02em;
+
+    color:var(--navy);
+
+    margin:0}
+
+.card p,.card li {
+
+    color:#56697b;
+
+    font-size:13.3px;
+
+    line-height:1.78}
+
+.card p:last-child,.card ul:last-child {
+
+    margin-bottom:0}
+
+.card ul {
+
+    padding-left:18px}
+
+.card li+li {
+
+    margin-top:10px}
+
+.notice {
+
+    background:#fffaf0;
+
+    border:1px solid #f6d99f;
+
+    padding:14px 17px;
+
+    color:#7d5722;
+
+    border-radius:12px;
+
+    font-size:12px;
+
+    margin-top:18px}
+
+    .catalog-toolbar {
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:20px}
+
+.search-box {
+
+    position:relative;
+
+    flex:1;
+
+    min-width:225px}
+
+.search-box input {
+
+    width:100%;
+
+    padding:13px 15px 13px 40px;
+
+    border-radius:11px;
+
+    border:1px solid #d8e3eb;
+
+    background:white;
+
+    color:var(--text);
+
+    outline:none}
+
+.search-box input:focus {
+
+    border-color:var(--blue)}
+
+.search-box span {
+
+    position:absolute;
+
+    top:10px;
+
+    left:15px;
+
+    color:var(--muted)}
+
+.count {
+
+    font-size:12px;
+
+    color:var(--muted)}
+
+.chips {
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:9px;
+
+    margin:0 0 29px}
+
+.chip {
+
+    background:white;
+
+    border:1px solid var(--line);
+
+    border-radius:100px;
+
+    padding:7px 13px;
+
+    font-size:11px;
+
+    font-weight:700;
+
+    color:#567081}
+
+.chip[aria-pressed="true"],.chip:hover {
+
+    background:var(--navy);
+
+    color:white;
+
+    border-color:var(--navy)}
+
+.category {
+
+    margin-bottom:29px}
+
+.category-title {
+
+    display:flex;
+
+    align-items:center;
+
+    gap:11px;
+
+    margin:0 0 13px}
+
+.category-title h3 {
+
+    font-size:16px;
+
+    color:var(--navy);
+
+    margin:0}
+
+.category-title span {
+
+    width:31px;
+
+    height:31px;
+
+    border-radius:9px;
+
+    background:#e4eff3;
+
+    display:grid;
+
+    place-items:center}
+
+.services {
+
+    display:grid;
+
+    grid-template-columns:repeat(2,minmax(0,1fr));
+
+    gap:13px}
+
+.service {
+
+    background:#fff;
+
+    border:1px solid var(--line);
+
+    border-radius:13px;
+
+    padding:20px 21px}
+
+.service h4 {
+
+    font:800 13px/1.5 Manrope,sans-serif;
+
+    color:var(--navy);
+
+    margin:0 0 8px}
+
+.service p {
+
+    font-size:12px;
+
+    line-height:1.7;
+
+    color:var(--muted);
+
+    margin:0}
+
+.pending {
+
+    display:inline-block;
+
+    margin-bottom:8px;
+
+    font-weight:700;
+
+    color:#a56d1c;
+
+    background:#fff3db;
+
+    border-radius:5px;
+
+    padding:2px 7px;
+
+    font-size:10px}
+
+.empty-state {
+
+    display:none;
+
+    background:#fff;
+
+    border:1px dashed #bed0da;
+
+    text-align:center;
+
+    border-radius:14px;
+
+    padding:27px;
+
+    color:var(--muted)}
+
+    .process {
+
+    display:grid;
+
+    grid-template-columns:repeat(4,minmax(0,1fr));
+
+    gap:12px;
+
+    margin-top:19px}
+
+.step {
+
+    background:#fff;
+
+    border:1px solid var(--line);
+
+    padding:20px 17px;
+
+    border-radius:14px}
+
+.step-num {
+
+    color:var(--blue);
+
+    font:800 24px Manrope,sans-serif}
+
+.step h3 {
+
+    font-size:13px;
+
+    color:var(--navy);
+
+    margin:10px 0 6px}
+
+.step p {
+
+    font-size:12px;
+
+    color:var(--muted);
+
+    margin:0}
+
+.priority {
+
+    border-left:4px solid var(--red);
+
+    background:#fff;
+
+    border-radius:11px;
+
+    padding:17px 20px;
+
+    margin-top:17px}
+
+.priority strong {
+
+    color:var(--navy)}
+
+.priority p {
+
+    font-size:12px;
+
+    color:var(--muted);
+
+    margin:5px 0 0}
+
+    .organigram-panel {
+
+    background:#fff;
+
+    border:1px solid var(--line);
+
+    border-radius:18px;
+
+    padding:20px;
+
+    box-shadow:var(--shadow)}
+
+.organigram-toolbar {
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:15px}
+
+.organigram-toolbar small {
+
+    color:var(--muted)}
+
+.zoom-buttons {
+
+    display:flex;
+
+    gap:7px}
+
+.zoom-buttons button {
+
+    border:1px solid var(--line);
+
+    border-radius:9px;
+
+    background:white;
+
+    color:var(--navy);
+
+    padding:8px 13px;
+
+    font-weight:700}
+
+.zoom-buttons button:hover {
+
+    background:var(--bg)}
+
+.organigram-viewport {
+
+    height:500px;
+
+    overflow:auto;
+
+    background:radial-gradient(#d5e0e7 1px,transparent 1px);
+
+    background-size:18px 18px;
+
+    border:1px solid var(--line);
+
+    border-radius:12px;
+
+    text-align:left;
+
+    position:relative}
+
+.organigram-canvas {
+
+    transform-origin:top left;
+
+    display:inline-block;
+
+    min-width:100%;
+
+    transition:transform .15s}
+
+.organigram-canvas img {
+
+    display:block;
+
+    max-width:none;
+
+    width:1200px;
+
+    height:auto}
+
+.organigram-missing {
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    min-height:430px;
+
+    text-align:center;
+
+    padding:30px;
+
+    max-width:450px;
+
+    margin:auto;
+
+    color:var(--muted)}
+
+.organigram-missing strong {
+
+    display:block;
+
+    color:var(--navy);
+
+    font-size:17px}
+
+.organigram-missing code {
+
+    font-size:12px;
+
+    background:#ecf2f6;
+
+    padding:3px 5px;
+
+    border-radius:5px;
+
+    overflow-wrap:anywhere}
+
+.footer {
+
+    border-top:1px solid var(--line);
+
+    padding-top:24px;
+
+    margin-top:70px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    flex-wrap:wrap;
+
+    gap:8px;
+
+    font-size:11px;
+
+    color:var(--muted)}
+
+    @media(max-width:1100px) {
+
+    .content {
+
+    padding-left:30px;
+
+    padding-right:30px}
+
+.hero {
+
+    padding-left:30px;
+
+    padding-right:30px}
+
+.process {
+
+    grid-template-columns:repeat(2,1fr)}
+
+}
+
+    @media(max-width:780px) {
+
+    .sidebar {
+
+    display:none}
+
+.mobile-top {
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:12px;
+
+    padding:12px 18px;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:30;
+
+    background:var(--navy-dark);
+
+    color:white}
+
+.mobile-top strong {
+
+    font-size:13px}
+
+.mobile-top button {
+
+    background:#ffffff18;
+
+    color:#fff;
+
+    border:1px solid #ffffff28;
+
+    border-radius:8px;
+
+    padding:7px 10px}
+
+.mobile-menu {
+
+    display:none;
+
+    position:sticky;
+
+    top:55px;
+
+    z-index:29;
+
+    background:var(--navy);
+
+    padding:8px 18px}
+
+.mobile-menu.open {
+
+    display:block}
+
+.mobile-menu a {
+
+    display:block;
+
+    color:white;
+
+    padding:9px;
+
+    border-bottom:1px solid #ffffff1a;
+
+    font-size:13px}
+
+.main {
+
+    margin-left:0}
+
+.content {
+
+    padding:0 20px 45px}
+
+.hero {
+
+    padding:58px 22px 78px}
+
+.cards,.services {
+
+    grid-template-columns:1fr}
+
+.index-box {
+
+    min-width:135px}
+
+.section {
+
+    padding-top:56px}
+
+.section-head {
+
+    margin-bottom:23px}
+
+.organigram-viewport {
+
+    height:380px}
+
+}
+
+    @media(max-width:480px) {
+
+    .process {
+
+    grid-template-columns:1fr}
+
+.hero-index {
+
+    gap:8px}
+
+.index-box {
+
+    min-width:calc(50% - 8px);
+
+    padding:13px}
+
+.card {
+
+    padding:20px}
+
+.hero p {
+
+    font-size:14px}
+
+}
+
+    @media(prefers-reduced-motion:reduce) {
+
+    html {
+
+    scroll-behavior:auto}
+
+*,*:before,*:after {
+
+    transition:none!important}
+
+}
+
+    /* Identidad institucional: paleta del Manual de Normas de Machalí, págs. 9 y 10. */
+
+    :root {
+
+    --navy:#00677f;
+
+    --navy-dark:#00677f;
+
+    --blue:#008aab;
+
+    --orange:#f38b00;
+
+    --red:#d70036;
+
+    --text:#233242;
+
+    --muted:#5d6f7d;
+
+    --bg:#f5f8fa;
+
+    --line:#dce9ed;
+
+    --shadow:0 12px 30px rgba(0,106,131,.07)}
+
+    .sidebar {
+
+    background:linear-gradient(180deg,#008aab 0%,#00667f 100%)}
+
+    .brand {
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:stretch;
+
+    gap:10px;
+
+    padding:0 5px 22px}
+
+    .brand-logo {
+
+    display:block;
+
+    background:#fff;
+
+    border-radius:10px;
+
+    padding:12px 8px;
+
+    text-align:center}
+
+    .logo-oficial {
+
+    display:block;
+
+    width:100%;
+
+    max-width:230px;
+
+    height:auto;
+
+    object-fit:contain;
+
+    margin:auto}
+
+    .brand-descriptor {
+
+    font-size:12px;
+
+    letter-spacing:.06em;
+
+    text-transform:uppercase;
+
+    text-align:center;
+
+    font-weight:800;
+
+    color:#fff}
+
+    .sidebar-label {
+
+    color:#d9f5f9}
+
+    .nav-link {
+
+    color:#e2f5f7}
+
+    .nav-link:hover,.nav-link.active {
+
+    background:rgba(255,255,255,.19)}
+
+    .nav-link.active {
+
+    box-shadow:inset 4px 0 var(--orange)}
+
+    .sidebar-foot {
+
+    color:#e0eff2}
+
+    .hero {
+
+    background:linear-gradient(122deg,#008aab,#00758f);
+
+    padding-top:55px}
+
+    .hero:before,.hero:after {
+
+    border-color:rgba(255,255,255,.13)}
+
+    .hero-seal {
+
+    display:inline-block;
+
+    background:white;
+
+    border-radius:14px;
+
+    padding:11px 17px;
+
+    margin:0 0 20px;
+
+    max-width:260px;
+
+    box-shadow:0 9px 25px rgba(0,0,0,.1)}
+
+    .hero-seal .logo-oficial {
+
+    width:220px}
+
+    .hero .eyebrow {
+
+    color:#e9faff}
+
+    .hero p {
+
+    color:#ecf9fb}
+
+    .btn-primary {
+
+    background:var(--orange);
+
+    color:#fff}
+
+    .index-box strong,.card h3,.section h2,.category-title h3,.service h4,.step h3,.priority strong {
+
+    color:#006780}
+
+    .index-box:nth-child(3) strong {
+
+    color:var(--red)}
+
+    .index-box:nth-child(2) strong {
+
+    color:#a75c00}
+
+    .divider-line {
+
+    background:var(--orange)}
+
+    .chip[aria-pressed="true"],.chip:hover {
+
+    background:var(--blue);
+
+    border-color:var(--blue);
+
+    color:white}
+
+    .mobile-top {
+
+    background:var(--blue)}
+
+    .mobile-brand {
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px}
+
+    .mobile-brand .logo-oficial {
+
+    width:74px;
+
+    background:white;
+
+    padding:3px;
+
+    border-radius:5px}
+
+    .mobile-brand strong {
+
+    font-size:12px}
+
+    .footer {
+
+    border-top:3px solid var(--blue)}
+
+    @media(max-width:780px) {
+
+    .hero-seal .logo-oficial {
+
+    width:170px}
+
+.hero-seal {
+
+    padding:8px 11px}
+
+.mobile-top {
+
+    background:var(--blue)}
+
+}
+
+/* MESA DE AYUDA: estilos separados para que puedas modificarlos fácilmente */
+
+.mesa-block { margin-top: 27px; }
+
+.mesa-subtitle { color: var(--navy); font-size: 19px; margin: 0 0 14px; }
+
+.mesa-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 15px; }
+
+.mesa-card { background: white; border: 1px solid var(--line); border-radius: 15px; padding: 23px; box-shadow: var(--shadow); }
+
+.mesa-card h4 { margin: 0 0 9px; font-size: 15px; color: var(--navy); }
+
+.mesa-card p, .mesa-card li { font-size: 13px; color: var(--muted); line-height: 1.75; }
+
+.mesa-card p { margin: 0; }
+
+.mesa-tag { display: inline-block; background: #e6f5f8; color: #006780; border-radius: 100px; padding: 4px 10px; font-size: 11px; font-weight: 800; margin-bottom: 11px; }
+
+.mesa-timeline { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: 10px; }
+
+.mesa-step { background: white; border: 1px solid var(--line); border-top: 4px solid var(--blue); padding: 18px 13px; border-radius: 12px; }
+
+.mesa-step b { font-size: 22px; color: var(--orange); display: block; }
+
+.mesa-step strong { font-size: 13px; color: var(--navy); display:block; margin: 8px 0 4px; }
+
+.mesa-step p { font-size: 12px; color: var(--muted); margin: 0; }
+
+.mesa-table-wrap { border-radius: 13px; overflow-x: auto; background: white; border: 1px solid var(--line); }
+
+.mesa-table { border-collapse: collapse; width:100%; min-width: 490px; }
+
+.mesa-table th, .mesa-table td { text-align: left; padding: 13px 17px; border-bottom: 1px solid var(--line); font-size: 13px; }
+
+.mesa-table th { background: var(--blue); color: white; }
+
+.mesa-table tr:last-child td { border-bottom: 0; }
+
+.mesa-table tbody tr:hover { background: #f4fafc; }
+
+.mesa-prio { font-weight: 800; }
+
+.mesa-prio.urgente { color: var(--red); }
+
+.mesa-prio.alta { color: #bc6400; }
+
+.mesa-prio.media { color: #00748e; }
+
+.mesa-prio.baja { color: #497d51; }
+
+.mesa-note { margin-top: 12px; color: var(--muted); font-size: 12px; }
+
+.mesa-highlight { background: #edf8fb; border-left: 4px solid var(--blue); padding: 18px 21px; border-radius: 10px; margin-top: 18px; font-size: 13px; color: var(--text); }
+
+.mesa-highlight strong { color: var(--navy); }
+
+.mesa-roles { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap:15px; }
+
+.mesa-roles ul { padding-left: 19px; margin: 7px 0 0; }
+
+.mesa-roles li + li { margin-top: 7px; }
+
+.mesa-raci { display:flex; flex-wrap:wrap; gap:9px; margin-top:12px; }
+
+.mesa-raci span { border:1px solid var(--line); border-radius:8px; background:white; padding:9px 13px; font-size:12px; }
+
+.mesa-raci b { color:var(--blue); }
+
+@media(max-width:1000px) { .mesa-timeline { grid-template-columns:repeat(3,minmax(0,1fr)); } }
+
+@media(max-width:640px) { .mesa-grid,.mesa-roles,.mesa-timeline { grid-template-columns:1fr; } }
+
+
+  /* ORGANIGRAMA: zoom nítido y movimiento con mouse */
+  .organigram-viewport {
+    position: relative;
+    overflow: hidden;
+    cursor: grab;
+    user-select: none;
+    touch-action: none;
+    overscroll-behavior: contain;
+  }
+
+  .organigram-viewport.arrastrando {
+    cursor: grabbing;
+  }
+
+  .organigram-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    min-width: 0;
+    transition: none;
+  }
+
+  .organigram-canvas img {
+    display: block;
+    width: 1200px;
+    max-width: none;
+    height: auto;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+
+  .organigram-missing {
+    position: absolute;
+    inset: 0;
+    max-width: none;
+  }
+
+</style>
+
+ </head>
+
+ <body>
+
+  <aside aria-label="Navegación principal" class="sidebar">
+
+   <a aria-label="Volver al inicio" class="brand" href="#inicio">
+
+    <span class="brand-logo">
+
+     <img alt="Logotipo oficial de Machalí: juntos creamos futuro" class="logo-oficial" src="logo.png"/>
+
+    </span>
+
+    <span class="brand-descriptor">
+
+     Manual de Inducción TI
+
+    </span>
+
+   </a>
+
+   <div class="sidebar-label">
+
+    MANUAL DE INDUCCIÓN
+
+   </div>
+
+   <a class="nav-link active" href="#inicio">
+
+    <span class="nav-num">
+
+     00
+
+    </span>
+
+    Inicio
+
+   </a>
+
+   <a class="nav-link" href="#kubuntu">
+
+    <span class="nav-num">
+
+     01
+
+    </span>
+
+    Instalación de Kubuntu
+
+   </a>
+
+   <a class="nav-link" href="#catalogo">
+
+    <span class="nav-num">
+
+     02
+
+    </span>
+
+    Catálogo de Servicios TI
+
+   </a>
+
+   <a class="nav-link" href="#mesa">
+
+    <span class="nav-num">
+
+     03
+
+    </span>
+
+    Mesa de Ayuda
+
+   </a>
+
+   <a class="nav-link" href="#organigrama">
+
+    <span class="nav-num">
+
+     04
+
+    </span>
+
+    Organigrama
+
+   </a>
+
+   <div class="sidebar-foot">
+
+    Documento de consulta interna
+
+    <br/>
+
+    Soporte y servicios informáticos
+
+   </div>
+
+  </aside>
+
+  <header class="mobile-top">
+
+   <span class="mobile-brand">
+
+    <img alt="Logotipo oficial de Machalí: juntos creamos futuro" class="logo-oficial" src="logo.png"/>
+
+    <strong>
+
+     Manual TI
+
+    </strong>
+
+   </span>
+
+   <button aria-controls="mobileMenu" aria-expanded="false" aria-label="Abrir menú" id="menuBtn">
+
+    ☰ Menú
+
+   </button>
+
+  </header>
+
+  <nav aria-label="Navegación móvil" class="mobile-menu" id="mobileMenu">
+
+   <a href="#inicio">
+
+    Inicio
+
+   </a>
+
+   <a href="#kubuntu">
+
+    Kubuntu
+
+   </a>
+
+   <a href="#catalogo">
+
+    Catálogo TI
+
+   </a>
+
+   <a href="#mesa">
+
+   </a>
+
+   <a href="#organigrama">
+
+   </a>
+
+  </nav>
+
+  <main class="main" id="inicio">
+
+   <div class="hero">
+
+    <div class="hero-content">
+
+     <div class="hero-seal">
+
+      <img alt="Logotipo oficial de Machalí: juntos creamos futuro" class="logo-oficial" src="logo.png"/>
+
+     </div>
+
+     <span class="eyebrow">
+
+      Dirección de soporte informático
+
+     </span>
+
+     <h1>
+
+      Manual de
+
+      <br/>
+
+      Inducción TI
+
+     </h1>
+
+     <p>
+
+      Una guía de consulta para conocer el entorno tecnológico, los servicios informáticos y los procedimientos de soporte de la Municipalidad de Machalí.
+
+     </p>
+
+     <div class="hero-actions">
+
+      <a class="btn btn-primary" href="#catalogo">
+
+       Explorar servicios
+
+       <span aria-hidden="true">
+
+        ↗
+
+       </span>
+
+      </a>
+
+      <a class="btn btn-ghost" href="#kubuntu">
+
+       Ver guía de Kubuntu
+
+      </a>
+
+     </div>
+
+    </div>
+
+   </div>
+
+   <div class="content">
+
+    <div class="hero-index">
+
+     <div class="index-box">
+
+      <strong>
+
+       01
+
+      </strong>
+
+      <span>
+
+       Entorno Kubuntu
+
+      </span>
+
+     </div>
+
+     <div class="index-box">
+
+      <strong>
+
+       09
+
+      </strong>
+
+      <span>
+
+       Categorías de servicios
+
+      </span>
+
+     </div>
+
+     <div class="index-box">
+
+      <strong>
+
+       03
+
+      </strong>
+
+      <span>
+
+       Flujos de soporte e información
+
+      </span>
+
+     </div>
+
+     <div class="index-box">
+
+      <strong>
+
+       01
+
+      </strong>
+
+      <span>
+
+       Organigrama institucional
+
+      </span>
+
+     </div>
+
+    </div>
+
+    <section class="section" id="kubuntu">
+
+     <div class="section-head">
+
+      <div>
+
+       <div class="kicker">
+
+        01 / Plataforma de trabajo
+
+       </div>
+
+       <h2>
+
+        Instalación de Kubuntu
+
+       </h2>
+
+       <p class="intro">
+
+        Aspectos fundamentales del sistema operativo y de las herramientas utilizadas para las labores municipales.
+
+       </p>
+
+       <div class="divider-line">
+
+       </div>
+
+      </div>
+
+     </div>
+
+     <div class="cards">
+
+      <article class="card">
+
+       <div class="card-head">
+
+        <span class="icon-box">
+
+         ⌘
+
+        </span>
+
+        <h3>
+
+         ¿Por qué elegir Kubuntu?
+
+        </h3>
+
+       </div>
+
+       <p>
+
+        Kubuntu combina la estabilidad, seguridad y el soporte de Ubuntu con la flexibilidad del entorno gráfico KDE Plasma. Su interfaz intuitiva facilita la adaptación de los usuarios y permite personalizar el espacio de trabajo sin sacrificar el rendimiento.
+
+       </p>
+
+      </article>
+
+      <article class="card">
+
+       <div class="card-head">
+
+        <span class="icon-box orange">
+
+         ⚙
+
+        </span>
+
+        <h3>
+
+         Proceso de instalación
+
+        </h3>
+
+       </div>
+
+       <p>
+
+        El procedimiento descrito en el manual contempla la opción «Borrar disco e instalar Kubuntu», que permite configurar automáticamente las particiones necesarias según el equipo y el instalador.
+
+       </p>
+
+       <p>
+
+        <strong>
+
+         Importante:
+
+        </strong>
+
+        esta opción elimina los datos existentes del disco. Antes de ejecutarla, verificar la autorización del área de TI y realizar un respaldo.
+
+       </p>
+
+      </article>
+
+      <article class="card wide">
+
+       <div class="card-head">
+
+        <span class="icon-box red">
+
+         ▦
+
+        </span>
+
+        <h3>
+
+         Aplicaciones posteriores a la instalación
+
+        </h3>
+
+       </div>
+
+       <div class="cards">
+
+        <div>
+
+         <ul>
+
+          <li>
+
+           <strong>
+
+            Google Chrome:
+
+           </strong>
+
+           navegador utilizado para aplicaciones web y labores municipales.
+
+          </li>
+
+          <li>
+
+           <strong>
+
+            Linphone:
+
+           </strong>
+
+           comunicaciones de voz, videollamadas y mensajería.
+
+          </li>
+
+          <li>
+
+           <strong>
+
+            RustDesk:
+
+           </strong>
+
+           herramienta de asistencia remota para soporte dentro de la red municipal.
+
+          </li>
+
+         </ul>
+
+        </div>
+
+        <div>
+
+         <ul>
+
+          <li>
+
+           <strong>
+
+            AnyDesk:
+
+           </strong>
+
+           herramienta complementaria de asistencia remota a equipos externos.
+
+          </li>
+
+          <li>
+
+           <strong>
+
+            ONLYOFFICE:
+
+           </strong>
+
+           creación y edición de documentos ofimáticos.
+
+          </li>
+
+          <li>
+
+           <strong>
+
+            LibreOffice:
+
+           </strong>
+
+           suite ofimática utilizada en procesos vinculados al gestor documental.
+
+          </li>
+
+         </ul>
+
+        </div>
+
+       </div>
+
+      </article>
+
+     </div>
+
+    </section>
+
+    <section class="section" id="catalogo">
+
+     <div class="section-head">
+
+      <div>
+
+       <div class="kicker">
+
+        02 / Portafolio de atención
+
+       </div>
+
+       <h2>
+
+        Catálogo de Servicios TI
+
+       </h2>
+
+       <p class="intro">
+
+        Servicios y requerimientos tecnológicos organizados por área. Usa la búsqueda o las categorías para encontrar lo que necesitas.
+
+       </p>
+
+       <div class="divider-line">
+
+       </div>
+
+      </div>
+
+     </div>
+
+     <div class="catalog-toolbar">
+
+      <label class="search-box">
+
+       <span aria-hidden="true">
+
+        ⌕
+
+       </span>
+
+       <input aria-label="Buscar servicios" id="serviceSearch" placeholder="Buscar por servicio o palabra clave…" type="search"/>
+
+      </label>
+
+      <span aria-live="polite" class="count" id="resultCount">
+
+      </span>
+
+     </div>
+
+     <div aria-label="Filtrar categorías" class="chips" id="categoryFilters">
+
+     </div>
+
+     <div id="catalogContent">
+
+     </div>
+
+     <div class="empty-state" id="emptyState">
+
+      No encontramos servicios con esa búsqueda. Prueba con otra palabra.
+
+     </div>
+
+    </section>
+
+    <section class="section" id="mesa">
+
+  <div class="section-head">
+
+    <div>
+
+      <div class="kicker">03 / Atención y soporte informático</div>
+
+      <h2>Mesa de Ayuda</h2>
+
+      <p class="intro">La Mesa de Ayuda permite registrar, clasificar, atender y hacer seguimiento de las solicitudes e incidencias informáticas mediante tickets en Freshdesk.</p>
+
+      <div class="divider-line"></div>
+
+    </div>
+
+  </div>
+
+  <div class="mesa-grid">
+
+    <article class="mesa-card">
+
+      <span class="mesa-tag">¿Para qué sirve?</span>
+
+      <h4>Objetivos de la Mesa de Ayuda</h4>
+
+      <p>Centralizar la comunicación con la Unidad de Informática, mantener un historial de atenciones, clasificar los casos por prioridad y documentar soluciones para futuras consultas.</p>
+
+    </article>
+
+    <article class="mesa-card">
+
+      <span class="mesa-tag">Herramienta de trabajo</span>
+
+      <h4>Registro mediante tickets</h4>
+
+      <p>Cada requerimiento queda asociado a un ticket con los antecedentes del usuario, descripción, historial de atención, responsable, estado y resolución.</p>
+
+    </article>
+
+  </div>
+
+  <div class="mesa-block">
+
+    <h3 class="mesa-subtitle">1. Conceptos fundamentales</h3>
+
+    <div class="mesa-grid">
+
+      <article class="mesa-card"><h4>🎫 Ticket</h4><p>Registro histórico que permite gestionar y seguir una solicitud, incidencia o problema desde su ingreso hasta su cierre.</p></article>
+
+      <article class="mesa-card"><h4>📩 Solicitud</h4><p>Petición de un servicio: crear una cuenta, instalar una estación de trabajo o solicitar equipamiento.</p></article>
+
+      <article class="mesa-card"><h4>🛠️ Incidencia</h4><p>Interrupción o disminución no planificada de un servicio: una impresora que no funciona o una falla del correo.</p></article>
+
+      <article class="mesa-card"><h4>🌐 Problema</h4><p>Causa, todavía desconocida o en investigación, de una o varias incidencias relacionadas; por ejemplo, una falla general de conectividad.</p></article>
+
+    </div>
+
+  </div>
+
+  <div class="mesa-block">
+
+    <h3 class="mesa-subtitle">2. ¿Cómo se atiende un requerimiento?</h3>
+
+    <div class="mesa-timeline">
+
+      <div class="mesa-step"><b>01</b><strong>Ingreso</strong><p>Se informa el requerimiento y se crea el ticket.</p></div>
+
+      <div class="mesa-step"><b>02</b><strong>Clasificación</strong><p>Se identifica el tipo, el impacto y la urgencia.</p></div>
+
+      <div class="mesa-step"><b>03</b><strong>Asignación</strong><p>El ticket se asigna al técnico o grupo correspondiente.</p></div>
+
+      <div class="mesa-step"><b>04</b><strong>Resolución</strong><p>Se diagnostica, atiende y documenta la solución.</p></div>
+
+      <div class="mesa-step"><b>05</b><strong>Cierre</strong><p>Se registra la conformidad o se cierra según el procedimiento.</p></div>
+
+    </div>
+
+  </div>
+
+  <div class="mesa-block">
+
+    <h3 class="mesa-subtitle">3. Estados de un ticket en Freshdesk</h3>
+
+    <div class="mesa-grid">
+
+      <article class="mesa-card"><h4>🔵 Abierto</h4><p>El ticket se ha registrado y está en proceso de atención por el equipo de soporte.</p></article>
+
+      <article class="mesa-card"><h4>🟠 Pendiente</h4><p>La atención requiere una respuesta del usuario o información de un tercero para continuar.</p></article>
+
+      <article class="mesa-card"><h4>🟢 Resuelto</h4><p>El técnico ha entregado una solución y considera resuelto el requerimiento.</p></article>
+
+      <article class="mesa-card"><h4>⚪ Cerrado</h4><p>El proceso de atención ha finalizado y el ticket quedó cerrado.</p></article>
+
+    </div>
+
+  </div>
+
+  <div class="mesa-block">
+
+    <h3 class="mesa-subtitle">4. Prioridades y tiempos de atención (SLA)</h3>
+
+    <p class="intro" style="margin-bottom:15px">El SLA define los tiempos de primera respuesta y de resolución establecidos en el documento de Mesa de Ayuda.</p>
+
+    <div class="mesa-table-wrap">
+
+      <table class="mesa-table">
+
+        <thead><tr><th>Prioridad</th><th>Primera respuesta</th><th>Resolución</th></tr></thead>
+
+        <tbody>
+
+          <tr><td class="mesa-prio urgente">Urgente</td><td>1 hora</td><td>4 horas</td></tr>
+
+          <tr><td class="mesa-prio alta">Alta</td><td>4 horas</td><td>12 horas</td></tr>
+
+          <tr><td class="mesa-prio media">Media</td><td>8 horas</td><td>1 día</td></tr>
+
+          <tr><td class="mesa-prio baja">Baja</td><td>1 día</td><td>3 días</td></tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+    <p class="mesa-note">Fuente: documento «Mesa de Ayuda», apartado «Acuerdo de nivel de servicio (SLA)». Confirmar vigencia y horario de cómputo con la Unidad de Informática.</p>
+
+    <div class="mesa-highlight"><strong>¿Cómo se establece la prioridad?</strong> Las incidencias se evalúan según su impacto (personas o unidades afectadas) y urgencia (grado en que impiden trabajar). En las solicitudes ordinarias se considera el orden de llegada, con atención prioritaria de situaciones críticas.</div>
+
+  </div>
+
+  <div class="mesa-block">
+
+    <h3 class="mesa-subtitle">5. Equipos y responsabilidades</h3>
+
+    <div class="mesa-roles">
+
+      <article class="mesa-card">
+
+        <h4>Soporte TI</h4>
+
+        <ul>
+
+          <li>Mantención y configuración de computadores y periféricos.</li>
+
+          <li>Soporte de impresoras, teléfonos IP, cableado y software.</li>
+
+          <li>Asesoría de equipamiento y especificaciones técnicas.</li>
+
+        </ul>
+
+      </article>
+
+      <article class="mesa-card">
+
+        <h4>Gestión de Servicios TI</h4>
+
+        <ul>
+
+          <li>Operación y administración de sistemas municipales ERP.</li>
+
+          <li>Gestión de accesos a sistemas y plataformas.</li>
+
+          <li>Implementación de proyectos informáticos.</li>
+
+        </ul>
+
+      </article>
+
+    </div>
+
+    <div class="mesa-highlight"><strong>Matriz RASCI:</strong> se utiliza para aclarar quién realiza, aprueba, apoya, es consultado o debe ser informado de cada actividad.
+
+      <div class="mesa-raci">
+
+        <span><b>R</b> Responsable</span><span><b>A</b> Aprobador</span><span><b>S</b> Apoyo</span><span><b>C</b> Consultado</span><span><b>I</b> Informado</span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="mesa-block">
+
+    <h3 class="mesa-subtitle">6. Unidades con atención prioritaria</h3>
+
+    <div class="mesa-card">
+
+      <p>El documento destaca unidades que prestan atención al público, como Dirección de Tránsito, Juzgado de Policía Local, Tesorería Municipal, Alcaldía, Rentas, OIRS, OMIL, recepción de DIDECO y Registro Social de Hogares. La prioridad específica depende del impacto y la urgencia de cada caso.</p>
+
+    </div>
+
+  </div>
+
+</section>
+
+   <section class="section" id="organigrama">
+
+     <div class="section-head">
+
+      <div>
+
+       <div class="kicker">
+
+        04 / Estructura institucional
+
+       </div>
+
+       <h2>
+
+        Organigrama interactivo
+
+       </h2>
+
+       <p class="intro">
+
+        Explora la estructura institucional. Puedes ampliar, reducir o restaurar la visualización del diagrama.
+
+       </p>
+
+       <div class="divider-line">
+
+       </div>
+
+      </div>
+
+     </div>
+
+     <div class="organigram-panel">
+
+      <div class="organigram-toolbar">
+
+       <small>
+
+        Usa la rueda para acercar o alejar. Mantén presionado el clic izquierdo para mover.
+
+       </small>
+
+       <div class="zoom-buttons">
+
+        <button aria-label="Reducir zoom" id="zoomOut" type="button">
+
+         −
+
+        </button>
+
+        <button id="resetView" type="button">
+
+         Restablecer
+
+        </button>
+
+        <button aria-label="Aumentar zoom" id="zoomIn" type="button">
+
+         +
+
+        </button>
+
+       </div>
+
+      </div>
+
+      <div class="organigram-viewport" id="organigramViewport">
+
+       <div class="organigram-canvas" id="organigramCanvas">
+
+        <img alt="Organigrama institucional de la Municipalidad de Machalí" id="organigramImage" src="Organigrama-Global.drawio.svg" draggable="false"/>
+
+       </div>
+
+       <div class="organigram-missing" id="missingOrganigram">
+
+        <div>
+
+         <div style="font-size:35px;margin-bottom:10px">
+
+          ▤
+
+         </div>
+
+         <strong>
+
+          Organigrama pendiente de incorporar
+
+         </strong>
+
+         <p>
+
+          Coloca el archivo
+
+          <code>
+
+           Organigrama-Global.drawio.svg
+
+          </code>
+
+          en la misma carpeta que este HTML para visualizarlo aquí.
+
+         </p>
+
+        </div>
+
+       </div>
+
+      </div>
+
+     </div>
+
+    </section>
+
+    <footer class="footer">
+
+     <span>
+
+      Municipalidad de Machalí · Manual de Inducción TI
+
+     </span>
+
+     <span>
+
+      Documento de consulta · Diseñado por Pedro 
+
+     </span>
+
+    </footer>
+
+   </div>
+
+  </main>
+
+  <script>
+
+   const categories = [
+
+      {name:'Asesoría técnica',icon:'💡',items:[
+
+        ['💡Asesoría técnica general','Orientación a funcionarios en temas informáticos mediante ticket o llamada telefónica. Incluye apoyo en el uso de Google Workspace.'],
+
+        ['📋 Solicitud de especificaciones técnicas para la adquisición de equipamiento o servicios informáticos','Servicio de asesoría y levantamiento de requerimientos técnicos para la elaboración de fichas de especificaciones, cotizaciones y términos de referencia para la adquisición de hardware, software o servicios de TI ajustados al presupuesto y necesidades de cada dirección municipal.']
+
+      ]},
+
+      {name:'Equipamiento y hardware',icon:'🖥️',items:[
+
+        ['💻 Provisionamiento y gestión de equipos computacionales','Preparación, configuración, instalación de aplicaciones, entrega y puesta en marcha de computadores de escritorio y portátiles en la red institucional.'],
+
+        ['⌨️ Provisión y reemplazo de periféricos','Prueba, entrega y reemplazo de teclados, mouse, monitores, auriculares, adaptadores, cámaras web y proyectores.']
+
+      ]},
+
+      {name:'Gestión de identidad',icon:'👤',items:[
+
+        ['👤 Creación de cuentas para usuarios nuevos','Servicio que se encarga de proveerles a los funcionarios sus respectivas cuentas para los sistemas municipales, tales como la plataforma ERP, generar una cuenta dentro de Active Directory municipal, ingresar una cuenta de Microsoft 365 en su equipo asignado, etc..c'],
+
+        ['🔒 Eliminación de cuentas ante baja de usuario','Servicio focalizado en llevar un correcto precedimiento adminsitrativo al momento de solicitar la baja de un usuario, respaldar su correo institucional y suspenderlo posteriormente, eliminar su cuenta de Active Directory, suspender su acceso total a la plataforma ERP, entre otras credenciales asociadas.'],
+
+        ['✉️ Administración de firmas de correo electrónico','Servicio enfocado en proveer de un pie de firma estandarizado para cada correo institucional dentro de la municipalidad, el cual deberá llevar los datos de cada funcionario, incluyendo su nombre y apellido, cargo al que pertenece, dirección a la que pertenece, edificio en el cual trabaja y su respectivo anexo telefónico en caso de disponer de uno. Además de poder realizar correcciones o cambios en caso de que alguna firma presente un error en su información o cuando sea necesario atribuirle dicha firma a un nuevo funcionario'],
+
+        ['✍️ Gestión de firma electrónica','Servicio encargado de disponer para los funcionarios de una firma electrónica, la cual sirve para autenticar documentos digitales y firmar acuerdos online con la misma validez legal que una firma manuscrita, pero de forma más rápida, segura y sin papel. Consiste en realizar la instalación de dicha firma en el equipo del funcionario designado. También se encarga de disponer soluciones en caso de que la firma presente alguna falla.'],
+
+      ]},
+
+        {name:'Internet y redes',icon:'🌐',items:[
+
+      ['🔌 Instalación y gestión de equipos de red','Servicio que consiste en la instalación y posterior configuración de equipos de red, tales como routers y switches, en los puestos de trabajo de los funcionarios. El servicio se asegura de mantener a los trabajadores conectados a la red municipal, cubriendo todas sus dependencias.'],
+
+      ['🌐 Continuidad operacional del servicio de internet','Servicio enfocado en proveer y mantener la conexión a internet en los puestos de trabajo. Este incluye la configuración de las redes en los equipos, su habilitación mediante puertos físicos, la instalación de routers y la provisión de adaptadores Wi-Fi (USB). Además de abarcar el mantenimiento y soporte del cableado estructurado, como, por ejemplo, realizando la instalación o reparación de cables Ethernet dañados para restablecer el servicio.']
+
+      ]},
+
+      {name:'Respaldo y almacenamiento',icon:'💾',items:[['💾 Respaldo y restauración de archivos municipales','Servicio que consiste en el respaldo y restauración de información alojada en los puestos de trabajo. Las labores incluyen la ejecución de respaldos de datos preventivos en las computadoras y la recuperación de archivos específicos del funcionario.']]},
+
+      {name:'Servicios de impresión',icon:'🖨️',items:[
+
+        ['🖨️ Instalación de impresoras, escáneres y plotters','Servicio focalizado en garantizar la operatividad de los equipos de impresión, plotters y escáneres a lo largo de la municipalidad. El servicio abarca la instalación de equipos, sus controladores y entregar orientación a los funcionarios sobre el uso de los mismos.'],
+
+        ['🧃 Solicitud de consumibles para equipos de impresión','Servicio encargado de mantener los equipos de impresión con sus respectivos consumibles operativos y reemplazarlos al momento de terminar su vida útil. Además, se dispone de proveer para los funcionarios con tóneres en los casos donde se dificulte realizar el reemplazo de estos, como lo es en DIMAO y la oficina ubicada en Coya.']   
+
+    ]},
+
+      {name:'Sistemas municipales',icon:'🏛️',items:[
+
+        ['⚙️ Soporte de servicios municipales en plataforma ERP','Soporte para sistema de gestión municipal. En caso de que las funcionalidades de los sistemas no cubran todas las necesidades de gestión de la municipalidad o de cumplimiento de normativa. Contempla Sistemas Municipales como Permisos de Circulación, Contabilidad Gubernamental, Derechos de Aseo, Patentes Comerciales, Tesorería Municipal, etc.'],
+
+        ['🗃️  Soporte específico de plataformas SISREC, Monitoweb, Reloj Control, etc.','Categoría indicada en el documento original. Sus servicios específicos están pendientes de definición.']
+
+    ]},
+
+      {name:'Software y ofimática',icon:'📦',items:[
+
+        ['🧰 Solicitud de instalación y gestión de aplicaciones','Servicio encargado del despliegue, configuración, actualización y activación de licencias de aplicaciones de ofimática (Microsoft 365, visores PDF) y software especializado de ingeniería, diseño o gestión (QGis, ArcGIS, AutoCAD, ArchiCAD), según el perfil de funciones del usuario.']
+
+    ]},
+
+      {name:'Telefonía',icon:'📞',items:[
+
+        ['☎️ Instalación y gestión de teléfonos IP','Servicio que se encarga de proveer de teléfonos IP a los funcionarios a lo largo del municipio. Abarca la instalación de los dispositivos en los puestos de trabajo y su posterior configuración.'],
+
+        ['🔢 Solcitud y gestión de anexos telefónicos','Servicio encargado de disponer de anexos telefónicos para los funcionarios de la municipalidad siempre que se realice la instalación de un dispositivo nuevo, al solicitar un listado de los mismos o al pedir un anexo en específico.']
+
+    ]},
+
+    ];
+
+    const catalog=document.getElementById('catalogContent'),filters=document.getElementById('categoryFilters'),search=document.getElementById('serviceSearch'),counter=document.getElementById('resultCount'),empty=document.getElementById('emptyState');
+
+    let selected='Todas';
+
+    const normalize=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+
+    function element(tag,className,text){const el=document.createElement(tag);if(className)el.className=className;if(text!==undefined)el.textContent=text;return el}
+
+    function renderFilters(){filters.replaceChildren();['Todas',...categories.map(c=>c.name)].forEach(name=>{const b=element('button','chip',name);b.type='button';b.setAttribute('aria-pressed',String(selected===name));b.addEventListener('click',()=>{selected=name;renderFilters();renderCatalog()});filters.append(b)})}
+
+    function renderCatalog(){catalog.replaceChildren();let displayed=0;const q=normalize(search.value.trim());categories.forEach(cat=>{if(selected!=='Todas'&&selected!==cat.name)return;const items=cat.items.filter(i=>normalize(cat.name+' '+i[0]+' '+i[1]).includes(q));if(!items.length)return;const wrap=element('div','category');const title=element('div','category-title');title.append(element('span','',cat.icon),element('h3','',cat.name));const list=element('div','services');items.forEach(item=>{displayed++;const card=element('article','service');if(item[2])card.append(element('span','pending','Información por completar'));card.append(element('h4','',item[0]),element('p','',item[1]));list.append(card)});wrap.append(title,list);catalog.append(wrap)});counter.textContent=displayed+' resultado'+(displayed===1?'':'s');empty.style.display=displayed?'none':'block'}
+
+    search.addEventListener('input',renderCatalog);renderFilters();renderCatalog();
+
+    const menuButton=document.getElementById('menuBtn'),mobileMenu=document.getElementById('mobileMenu');menuButton.addEventListener('click',()=>{const isOpen=mobileMenu.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(isOpen))});mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mobileMenu.classList.remove('open');menuButton.setAttribute('aria-expanded','false')}));
+
+    const navLinks=Array.from(document.querySelectorAll('.sidebar .nav-link'));const sections=Array.from(document.querySelectorAll('main section, main#inicio'));const observer=new IntersectionObserver(entries=>{const visible=entries.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];if(!visible)return;navLinks.forEach(link=>link.classList.toggle('active',link.getAttribute('href')==='#'+visible.target.id))},{rootMargin:'-15% 0px -60% 0px',threshold:[0,.1,.4]});sections.forEach(s=>observer.observe(s));
+
+    // ORGANIGRAMA INTERACTIVO
+    // Se cambia el tamaño real del SVG, no se usa scale() para el zoom.
+    // Así el navegador vuelve a dibujar los textos y líneas del SVG.
+    const canvas = document.getElementById('organigramCanvas');
+    const image = document.getElementById('organigramImage');
+    const missing = document.getElementById('missingOrganigram');
+    const viewport = document.getElementById('organigramViewport');
+
+    const zoomMinimo = 0.15;
+    const zoomMaximo = 5;
+    let zoom = 1;
+    let anchoOriginal = 0;
+    let altoOriginal = 0;
+    let posicionX = 0;
+    let posicionY = 0;
+    let arrastrando = false;
+    let mouseX = 0;
+    let mouseY = 0;
+
+    function limitarMovimiento() {
+      const ancho = anchoOriginal * zoom;
+      const alto = altoOriginal * zoom;
+      const margen = 45;
+
+      if (ancho <= viewport.clientWidth) {
+        posicionX = (viewport.clientWidth - ancho) / 2;
+      } else {
+        posicionX = Math.max(viewport.clientWidth - ancho - margen,
+          Math.min(margen, posicionX));
+      }
+
+      if (alto <= viewport.clientHeight) {
+        posicionY = (viewport.clientHeight - alto) / 2;
+      } else {
+        posicionY = Math.max(viewport.clientHeight - alto - margen,
+          Math.min(margen, posicionY));
+      }
+    }
+
+    function dibujarOrganigrama() {
+      if (!anchoOriginal || !altoOriginal) return;
+
+      const nuevoAncho = anchoOriginal * zoom;
+      const nuevoAlto = altoOriginal * zoom;
+
+      // Cambiar el ancho real evita que el SVG pierda definición al ampliarse.
+      if (image.style.width !== nuevoAncho + 'px') {
+        image.style.width = nuevoAncho + 'px';
+        canvas.style.width = nuevoAncho + 'px';
+        canvas.style.height = nuevoAlto + 'px';
+      }
+
+      // Se mueve mediante left/top, sin usar transform ni scale.
+      canvas.style.left = Math.round(posicionX) + 'px';
+      canvas.style.top = Math.round(posicionY) + 'px';
+    }
+
+    function cambiarZoom(nuevoZoom, cursorX, cursorY) {
+      if (!anchoOriginal) return;
+      cursorX = cursorX ?? viewport.clientWidth / 2;
+      cursorY = cursorY ?? viewport.clientHeight / 2;
+
+      const zoomAnterior = zoom;
+      zoom = Math.max(zoomMinimo, Math.min(zoomMaximo, nuevoZoom));
+      const factor = zoom / zoomAnterior;
+
+      // Mantiene el punto bajo el mouse mientras se acerca o se aleja.
+      posicionX = cursorX - (cursorX - posicionX) * factor;
+      posicionY = cursorY - (cursorY - posicionY) * factor;
+
+      limitarMovimiento();
+      dibujarOrganigrama();
+    }
+
+    function restaurarVista() {
+      if (!anchoOriginal) return;
+      // Mostrar el diagrama completo dentro del recuadro.
+      zoom = Math.max(zoomMinimo, Math.min(1,
+        (viewport.clientWidth - 36) / anchoOriginal,
+        (viewport.clientHeight - 36) / altoOriginal));
+      posicionX = (viewport.clientWidth - anchoOriginal * zoom) / 2;
+      posicionY = (viewport.clientHeight - altoOriginal * zoom) / 2;
+      limitarMovimiento();
+      dibujarOrganigrama();
+    }
+
+    // Rueda: zoom hacia donde está el puntero.
+    viewport.addEventListener('wheel', function(evento) {
+      if (!anchoOriginal) return;
+      evento.preventDefault();
+      const rectangulo = viewport.getBoundingClientRect();
+      const x = evento.clientX - rectangulo.left - viewport.clientLeft;
+      const y = evento.clientY - rectangulo.top - viewport.clientTop;
+      const delta = evento.deltaY * (
+        evento.deltaMode === 1 ? 16 :
+        evento.deltaMode === 2 ? viewport.clientHeight : 1
+      );
+      cambiarZoom(zoom * Math.exp(-delta * 0.0015), x, y);
+    }, { passive: false });
+
+    // Clic izquierdo mantenido: arrastrar.
+    viewport.addEventListener('pointerdown', function(evento) {
+      if (!anchoOriginal || evento.button !== 0) return;
+      arrastrando = true;
+      mouseX = evento.clientX;
+      mouseY = evento.clientY;
+      viewport.classList.add('arrastrando');
+      viewport.setPointerCapture(evento.pointerId);
+    });
+
+    viewport.addEventListener('pointermove', function(evento) {
+      if (!arrastrando) return;
+      posicionX += evento.clientX - mouseX;
+      posicionY += evento.clientY - mouseY;
+      mouseX = evento.clientX;
+      mouseY = evento.clientY;
+      limitarMovimiento();
+      dibujarOrganigrama();
+    });
+
+    function terminarArrastre() {
+      arrastrando = false;
+      viewport.classList.remove('arrastrando');
+    }
+    viewport.addEventListener('pointerup', terminarArrastre);
+    viewport.addEventListener('pointercancel', terminarArrastre);
+    viewport.addEventListener('lostpointercapture', terminarArrastre);
+
+    // Conservar los botones que ya existían.
+    document.getElementById('zoomIn').addEventListener('click', function() {
+      cambiarZoom(zoom * 1.2);
+    });
+    document.getElementById('zoomOut').addEventListener('click', function() {
+      cambiarZoom(zoom / 1.2);
+    });
+    document.getElementById('resetView').addEventListener('click', restaurarVista);
+
+    // Leer las dimensiones iniciales del SVG una sola vez.
+    function imagenCargada() {
+      if (!image.naturalWidth) return;
+      canvas.style.left = '0px';
+      canvas.style.top = '0px';
+      image.style.width = '1200px';
+      anchoOriginal = image.getBoundingClientRect().width;
+      altoOriginal = image.getBoundingClientRect().height;
+      missing.style.display = 'none';
+      canvas.style.display = 'block';
+      restaurarVista();
+    }
+    image.addEventListener('load', imagenCargada);
+    image.addEventListener('error', function() {
+      anchoOriginal = 0;
+      canvas.style.display = 'none';
+      missing.style.display = 'flex';
+    });
+    if (image.complete) {
+      if (image.naturalWidth) imagenCargada();
+      else {
+        canvas.style.display = 'none';
+        missing.style.display = 'flex';
+      }
+    }
+
+    window.addEventListener('resize', function() {
+      if (anchoOriginal) restaurarVista();
+    });
+
+  </script>
+
+ </body>
+
+</html>
