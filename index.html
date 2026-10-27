@@ -676,9 +676,6 @@ h1,h2,h3,h4 {letter-spacing:-.047em}
 .nav-link:hover {color:#fff;background:#ffffff13}
 .nav-link.active {color:#fff;background:#ffffff1b;box-shadow:inset 3px 0 var(--v5-orange)}
 .nav-link.active .nav-symbol {background:#ffffff20;color:white}
-.v4-subnav {border-left:1px solid #41616d;margin:6px 0 9px 25px;padding:2px 0 2px 15px;gap:0}
-.v4-subnav a {color:#97b6c4;padding:6px 6px;font-size:11px}
-.v4-subnav a:hover {color:white}
 .sidebar-bottom{padding:22px 4px 0}
 .sidebar-help {background:#ffffff0c;border:1px solid #ffffff1a;border-radius:10px;padding:17px}
 .sidebar-help strong{color:#fff;font-size:11.5px}
@@ -979,9 +976,6 @@ h1,h2,h3,h4,.brand-descriptor,.v5-hero-panel h2,.jump-details strong {font-famil
 .nav-link.active {color:#006b86!important;background:#e5f5f9!important;border-color:#c9e7ee!important;box-shadow:inset 4px 0 #f38b00!important}
 .nav-link.active .nav-symbol {background:#caeaf2!important;color:#006f89!important}
 .nav-link.active .nav-symbol .icon{color:#006f89!important}
-.v4-subnav {border-left:2px solid #b2dbe5!important}
-.v4-subnav a{color:#597889!important}
-.v4-subnav a:hover{color:#006f89!important}
 .sidebar-help {background:#f0f9fb!important;border:1px solid #d2e9ef!important;color:#263f4a!important}
 .sidebar-help strong {color:#213945!important}
 .sidebar-help p {color:#667e89!important}
@@ -1087,6 +1081,27 @@ h1,h2,h3,h4,.brand-descriptor,.v5-hero-panel h2,.jump-details strong {font-famil
 h1,h2,h3,h4,.hero.hero-v5 h1,.hero.hero-v5 h2,.v5-hero-panel h2,.brand-descriptor,.section h2,.mesa-subtitle,.card h3,.mesa-card h4,.jump-details strong{font-family:var(--font-title)!important}
 
 </style>
+
+<style id="navigation-submenus-design">
+/* Submenús institucionales: todos los capítulos tienen navegación secundaria. */
+.site-nav { display:block; }
+.nav-group { margin:2px 0; }
+.nav-group-heading { position:relative; display:flex; align-items:center; min-height:49px; }
+.nav-group-heading > .nav-link { flex:1; min-width:0; padding-right:44px; }
+.nav-group-heading > .nav-link .nav-chevron {display:none;}
+.nav-expand { position:absolute; right:5px; top:50%; transform:translateY(-50%); display:grid;place-items:center; background:transparent; border:1px solid transparent; border-radius:7px; width:31px; height:34px; color:#527a89; font-size:19px; line-height:1; }
+.nav-expand:hover,.nav-expand:focus-visible { background:#eaf6f9; color:#006f89; border-color:#c8e5eb; }
+.nav-expand span { transition:transform .18s ease; display:block; }
+.nav-group.is-expanded .nav-expand span {transform:rotate(180deg);}
+.section-subnav {display:flex; flex-direction:column; gap:2px; margin:0 4px 12px 45px; padding:3px 0 3px 13px; border-left:2px solid #bbdce6; }
+.section-subnav[hidden]{display:none!important;}
+.section-subnav a { display:block; padding:8px 8px; min-height:34px; border-radius:7px; font-size:11.5px; font-weight:600; line-height:1.4; color:#4e7180; overflow-wrap:anywhere; }
+.section-subnav a:hover,.section-subnav a.is-current {background:#eaf7fa;color:#006a83;}
+.section-subnav a.is-current {font-weight:800;}
+#accesos-rapidos,#catalogo-buscador,#kubuntu-ventajas,#kubuntu-instalacion,#kubuntu-aplicaciones,#mesa-conceptos,#mesa-proceso,#mesa-estados,#prioridades-sla,#mesa-equipos,#tabla-rasci,#mesa-unidades,#organigrama-visor,#organigrama-controles {scroll-margin-top:105px;}
+@media(max-width:900px) { .section-subnav{margin-left:43px;} .nav-expand{right:3px;} }
+@media(prefers-reduced-motion:reduce){.nav-expand span{transition:none;}}
+</style>
 </head><body>
 <a class="skip-link" href="#contenido-principal">Saltar al contenido</a>
 <div class="site-frame">
@@ -1096,11 +1111,46 @@ h1,h2,h3,h4,.hero.hero-v5 h1,.hero.hero-v5 h2,.v5-hero-panel h2,.brand-descripto
 <span class="brand-descriptor">Portal de Inducción TI<small>Unidad de Informática</small></span>
 </a>
 <div class="nav-section-label">CONTENIDOS DEL PORTAL</div>
-<nav aria-label="Secciones" class="site-nav"><a class="nav-link" data-section-link="" href="#inicio"><span class="nav-symbol"><svg aria-hidden="true" class="icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m3 10 9-7 9 7"></path><path d="M5 9v12h14V9"></path><path d="M9 21v-7h6v7"></path></svg></span><span>Inicio</span><svg aria-hidden="true" class="nav-chevron" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m9 18 6-6-6-6"></path></svg></a>
-<a class="nav-link" data-section-link="" href="#kubuntu"><span class="nav-symbol"><svg aria-hidden="true" class="icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect height="13" rx="2" width="18" x="3" y="4"></rect><path d="M8 21h8M12 17v4"></path></svg></span><span>Instalación de Kubuntu</span><svg aria-hidden="true" class="nav-chevron" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m9 18 6-6-6-6"></path></svg></a>
-<a class="nav-link" data-section-link="" href="#catalogo"><span class="nav-symbol"><svg aria-hidden="true" class="icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect height="7" rx="1" width="7" x="3" y="3"></rect><rect height="7" rx="1" width="7" x="14" y="3"></rect><rect height="7" rx="1" width="7" x="3" y="14"></rect><rect height="7" rx="1" width="7" x="14" y="14"></rect></svg></span><span>Servicios TI</span><svg aria-hidden="true" class="nav-chevron" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m9 18 6-6-6-6"></path></svg></a>
-<a class="nav-link" data-section-link="" href="#mesa"><span class="nav-symbol"><svg aria-hidden="true" class="icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 14v-3a8 8 0 0 1 16 0v3"></path><rect height="7" rx="2" width="4" x="3" y="12"></rect><rect height="7" rx="2" width="4" x="17" y="12"></rect><path d="M19 19c0 2-3 3-6 3"></path></svg></span><span>Mesa de Ayuda</span><svg aria-hidden="true" class="nav-chevron" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m9 18 6-6-6-6"></path></svg></a><div class="v4-subnav"><a href="#prioridades-sla">↳ Prioridades</a><a href="#tabla-rasci">↳ Matriz RASCI</a></div>
-<a class="nav-link" data-section-link="" href="#organigrama"><span class="nav-symbol"><svg aria-hidden="true" class="icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect height="6" rx="1" width="6" x="9" y="2"></rect><rect height="6" rx="1" width="7" x="2" y="16"></rect><rect height="6" rx="1" width="7" x="15" y="16"></rect><path d="M12 8v4M5.5 16v-4H19v4"></path></svg></span><span>Organigrama</span><svg aria-hidden="true" class="nav-chevron" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m9 18 6-6-6-6"></path></svg></a></nav>
+<nav aria-label="Secciones" class="site-nav"><div class="nav-group is-expanded" data-nav-group="inicio">
+  <div class="nav-group-heading"><a class="nav-link" data-section-link="" href="#inicio"><span class="nav-symbol"><svg aria-hidden="true" class="icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m3 10 9-7 9 7"></path><path d="M5 9v12h14V9"></path><path d="M9 21v-7h6v7"></path></svg></span><span>Inicio</span><svg aria-hidden="true" class="nav-chevron" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m9 18 6-6-6-6"></path></svg></a>
+    <button class="nav-expand" type="button" aria-expanded="true" aria-controls="submenu-inicio" aria-label="Desplegar subopciones de inicio" title="Mostrar u ocultar subopciones"><span aria-hidden="true">⌄</span></button>
+  </div>
+  <div class="section-subnav" id="submenu-inicio">
+    <a href="#inicio">Portada</a><a href="#accesos-rapidos">Accesos rápidos</a>
+  </div>
+</div>
+<div class="nav-group" data-nav-group="kubuntu">
+  <div class="nav-group-heading"><a class="nav-link" data-section-link="" href="#kubuntu"><span class="nav-symbol"><svg aria-hidden="true" class="icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect height="13" rx="2" width="18" x="3" y="4"></rect><path d="M8 21h8M12 17v4"></path></svg></span><span>Instalación de Kubuntu</span><svg aria-hidden="true" class="nav-chevron" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m9 18 6-6-6-6"></path></svg></a>
+    <button class="nav-expand" type="button" aria-expanded="false" aria-controls="submenu-kubuntu" aria-label="Desplegar subopciones de kubuntu" title="Mostrar u ocultar subopciones"><span aria-hidden="true">⌄</span></button>
+  </div>
+  <div class="section-subnav" id="submenu-kubuntu" hidden>
+    <a href="#kubuntu-ventajas">¿Por qué Kubuntu?</a><a href="#kubuntu-instalacion">Proceso de instalación</a><a href="#kubuntu-aplicaciones">Aplicaciones</a>
+  </div>
+</div>
+<div class="nav-group" data-nav-group="catalogo">
+  <div class="nav-group-heading"><a class="nav-link" data-section-link="" href="#catalogo"><span class="nav-symbol"><svg aria-hidden="true" class="icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect height="7" rx="1" width="7" x="3" y="3"></rect><rect height="7" rx="1" width="7" x="14" y="3"></rect><rect height="7" rx="1" width="7" x="3" y="14"></rect><rect height="7" rx="1" width="7" x="14" y="14"></rect></svg></span><span>Servicios TI</span><svg aria-hidden="true" class="nav-chevron" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m9 18 6-6-6-6"></path></svg></a>
+    <button class="nav-expand" type="button" aria-expanded="false" aria-controls="submenu-catalogo" aria-label="Desplegar subopciones de catalogo" title="Mostrar u ocultar subopciones"><span aria-hidden="true">⌄</span></button>
+  </div>
+  <div class="section-subnav" id="submenu-catalogo" hidden>
+    <a href="#catalogo-buscador">Buscador de servicios</a><a href="#catalogo" data-catalog-category="Asesoría técnica">Asesoría técnica</a><a href="#catalogo" data-catalog-category="Equipamiento y hardware">Equipamiento y hardware</a><a href="#catalogo" data-catalog-category="Gestión de identidad">Gestión de identidad</a><a href="#catalogo" data-catalog-category="Internet y redes">Internet y redes</a><a href="#catalogo" data-catalog-category="Respaldo y almacenamiento">Respaldo y almacenamiento</a><a href="#catalogo" data-catalog-category="Servicios de impresión">Servicios de impresión</a><a href="#catalogo" data-catalog-category="Sistemas municipales">Sistemas municipales</a><a href="#catalogo" data-catalog-category="Software y ofimática">Software y ofimática</a><a href="#catalogo" data-catalog-category="Telefonía">Telefonía</a>
+  </div>
+</div>
+<div class="nav-group" data-nav-group="mesa">
+  <div class="nav-group-heading"><a class="nav-link" data-section-link="" href="#mesa"><span class="nav-symbol"><svg aria-hidden="true" class="icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 14v-3a8 8 0 0 1 16 0v3"></path><rect height="7" rx="2" width="4" x="3" y="12"></rect><rect height="7" rx="2" width="4" x="17" y="12"></rect><path d="M19 19c0 2-3 3-6 3"></path></svg></span><span>Mesa de Ayuda</span><svg aria-hidden="true" class="nav-chevron" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m9 18 6-6-6-6"></path></svg></a>
+    <button class="nav-expand" type="button" aria-expanded="false" aria-controls="submenu-mesa" aria-label="Desplegar subopciones de mesa" title="Mostrar u ocultar subopciones"><span aria-hidden="true">⌄</span></button>
+  </div>
+  <div class="section-subnav" id="submenu-mesa" hidden>
+    <a href="#mesa-conceptos">Conceptos fundamentales</a><a href="#mesa-proceso">Proceso de atención</a><a href="#mesa-estados">Estados de tickets</a><a href="#prioridades-sla">Prioridades</a><a href="#mesa-equipos">Equipos y responsabilidades</a><a href="#tabla-rasci">Matriz RASCI</a><a href="#mesa-unidades">Unidades prioritarias</a>
+  </div>
+</div>
+<div class="nav-group" data-nav-group="organigrama">
+  <div class="nav-group-heading"><a class="nav-link" data-section-link="" href="#organigrama"><span class="nav-symbol"><svg aria-hidden="true" class="icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect height="6" rx="1" width="6" x="9" y="2"></rect><rect height="6" rx="1" width="7" x="2" y="16"></rect><rect height="6" rx="1" width="7" x="15" y="16"></rect><path d="M12 8v4M5.5 16v-4H19v4"></path></svg></span><span>Organigrama</span><svg aria-hidden="true" class="nav-chevron" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m9 18 6-6-6-6"></path></svg></a>
+    <button class="nav-expand" type="button" aria-expanded="false" aria-controls="submenu-organigrama" aria-label="Desplegar subopciones de organigrama" title="Mostrar u ocultar subopciones"><span aria-hidden="true">⌄</span></button>
+  </div>
+  <div class="section-subnav" id="submenu-organigrama" hidden>
+    <a href="#organigrama-visor">Visor interactivo</a><a href="#organigrama-controles">Controles de zoom</a>
+  </div>
+</div></nav>
 <div class="sidebar-bottom">
 <div class="sidebar-help"><svg aria-hidden="true" class="icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"></path><path d="m9 12 2 2 4-4"></path></svg><strong>Guía de consulta</strong><p>Información de soporte y procesos tecnológicos. Verifica la vigencia de los procedimientos con el área de TI.</p></div>
 <span class="sidebar-version">MANUAL DE CONSULTA · EDICIÓN V5</span>
@@ -1137,7 +1187,7 @@ h1,h2,h3,h4,.hero.hero-v5 h1,.hero.hero-v5 h2,.v5-hero-panel h2,.brand-descripto
 <aside aria-label="Directorio de consulta" class="v5-hero-panel">
 <div class="v5-hero-panel-kicker">DIRECTORIO / CONSULTA RÁPIDA</div>
 <h2>Encuentra lo que buscas.</h2>
-<strong>Accede directamente a las áreas del manual.</strong>
+<p>Accede directamente a las áreas del manual.</p>
 <nav aria-label="Accesos rápidos" class="v5-link-directory">
 <a href="#kubuntu"><b>01</b><span><strong>Entorno de trabajo</strong><small>Instalación y herramientas Kubuntu</small></span><span aria-hidden="true" class="v5-arrow">↗</span></a>
 <a href="#catalogo"><b>02</b><span><strong>Catálogo de servicios</strong><small>Servicios TI y solicitudes</small></span><span aria-hidden="true" class="v5-arrow">↗</span></a>
@@ -1150,7 +1200,7 @@ h1,h2,h3,h4,.hero.hero-v5 h1,.hero.hero-v5 h2,.v5-hero-panel h2,.brand-descripto
 <div class="v5-manual-strip"><span>MANUAL DE INDUCCIÓN TI</span><span><strong>04 SECCIONES</strong>  /  09 CATEGORÍAS DE SERVICIOS</span></div>
 </section>
 <div class="content">
-<section aria-labelledby="quick-title" class="quick-section"><div class="quick-head"><div><span class="section-eyebrow">EXPLORAR POR ÁREA</span><h2 id="quick-title">Elige por dónde comenzar.</h2><p class="v4-quick-caption">Consulta los contenidos del manual de manera ordenada, según lo que necesitas resolver.</p></div><button class="quick-search" data-open-search=""><svg aria-hidden="true" class="icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="7"></circle><path d="m16.6 16.6 4.4 4.4"></path></svg> Buscar contenido</button></div><div class="jump-grid"><a class="jump-card" href="#kubuntu"><span class="jump-symbol"><svg aria-hidden="true" class="icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect height="13" rx="2" width="18" x="3" y="4"></rect><path d="M8 21h8M12 17v4"></path></svg></span><span class="jump-details"><small>01 / GUÍA</small><strong>Kubuntu</strong><span>Sistema operativo y aplicaciones</span></span><span class="jump-arrow"><svg aria-hidden="true" class="icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
+<section aria-labelledby="quick-title" class="quick-section" id="accesos-rapidos"><div class="quick-head"><div><span class="section-eyebrow">EXPLORAR POR ÁREA</span><h2 id="quick-title">Elige por dónde comenzar.</h2><p class="v4-quick-caption">Consulta los contenidos del manual de manera ordenada, según lo que necesitas resolver.</p></div><button class="quick-search" data-open-search=""><svg aria-hidden="true" class="icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="7"></circle><path d="m16.6 16.6 4.4 4.4"></path></svg> Buscar contenido</button></div><div class="jump-grid"><a class="jump-card" href="#kubuntu"><span class="jump-symbol"><svg aria-hidden="true" class="icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect height="13" rx="2" width="18" x="3" y="4"></rect><path d="M8 21h8M12 17v4"></path></svg></span><span class="jump-details"><small>01 / GUÍA</small><strong>Kubuntu</strong><span>Sistema operativo y aplicaciones</span></span><span class="jump-arrow"><svg aria-hidden="true" class="icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
 <a class="jump-card" href="#catalogo"><span class="jump-symbol"><svg aria-hidden="true" class="icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect height="7" rx="1" width="7" x="3" y="3"></rect><rect height="7" rx="1" width="7" x="14" y="3"></rect><rect height="7" rx="1" width="7" x="3" y="14"></rect><rect height="7" rx="1" width="7" x="14" y="14"></rect></svg></span><span class="jump-details"><small>02 / GUÍA</small><strong>Servicios informáticos</strong><span>Explora el catálogo por categoría</span></span><span class="jump-arrow"><svg aria-hidden="true" class="icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
 <a class="jump-card" href="#mesa"><span class="jump-symbol"><svg aria-hidden="true" class="icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 14v-3a8 8 0 0 1 16 0v3"></path><rect height="7" rx="2" width="4" x="3" y="12"></rect><rect height="7" rx="2" width="4" x="17" y="12"></rect><path d="M19 19c0 2-3 3-6 3"></path></svg></span><span class="jump-details"><small>03 / GUÍA</small><strong>Mesa de Ayuda</strong><span>Tickets y prioridades de atención</span></span><span class="jump-arrow"><svg aria-hidden="true" class="icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
 <a class="jump-card" href="#organigrama"><span class="jump-symbol"><svg aria-hidden="true" class="icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect height="6" rx="1" width="6" x="9" y="2"></rect><rect height="6" rx="1" width="7" x="2" y="16"></rect><rect height="6" rx="1" width="7" x="15" y="16"></rect><path d="M12 8v4M5.5 16v-4H19v4"></path></svg></span><span class="jump-details"><small>04 / GUÍA</small><strong>Organigrama</strong><span>Visualiza la estructura institucional</span></span><span class="jump-arrow"><svg aria-hidden="true" class="icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a></div></section>
@@ -1177,7 +1227,7 @@ h1,h2,h3,h4,.hero.hero-v5 h1,.hero.hero-v5 h2,.v5-hero-panel h2,.brand-descripto
 </div>
 <div aria-hidden="true" class="section-index">01</div></div>
 <div class="cards">
-<details class="card expandable-card"><summary class="expandable-summary"><div class="card-head">
+<details id="kubuntu-ventajas" class="card expandable-card"><summary class="expandable-summary"><div class="card-head">
 <span class="icon-box">
 
          ⌘
@@ -1196,7 +1246,7 @@ h1,h2,h3,h4,.hero.hero-v5 h1,.hero.hero-v5 h2,.v5-hero-panel h2,.brand-descripto
 
        </p>
 </div></details>
-<details class="card expandable-card"><summary class="expandable-summary"><div class="card-head">
+<details id="kubuntu-instalacion" class="card expandable-card"><summary class="expandable-summary"><div class="card-head">
 <span class="icon-box orange">
 
          ⚙
@@ -1225,7 +1275,7 @@ h1,h2,h3,h4,.hero.hero-v5 h1,.hero.hero-v5 h2,.v5-hero-panel h2,.brand-descripto
 
        </p>
 </div></details>
-<details class="card wide expandable-card"><summary class="expandable-summary"><div class="card-head">
+<details id="kubuntu-aplicaciones" class="card wide expandable-card"><summary class="expandable-summary"><div class="card-head">
 <span class="icon-box red">
 
          ▦
@@ -1332,7 +1382,7 @@ h1,h2,h3,h4,.hero.hero-v5 h1,.hero.hero-v5 h2,.v5-hero-panel h2,.brand-descripto
 </div>
 </div>
 <div aria-hidden="true" class="section-index">02</div></div>
-<div class="catalog-toolbar">
+<div class="catalog-toolbar" id="catalogo-buscador">
 <label class="search-box">
 <span aria-hidden="true">
 
@@ -1377,7 +1427,7 @@ h1,h2,h3,h4,.hero.hero-v5 h1,.hero.hero-v5 h2,.v5-hero-panel h2,.brand-descripto
 <p>Cada requerimiento queda asociado a un ticket con los antecedentes del usuario, descripción, historial de atención, responsable, estado y resolución.</p>
 </div></details>
 </div>
-<div class="mesa-block">
+<div class="mesa-block" id="mesa-conceptos">
 <h3 class="mesa-subtitle">1. Conceptos fundamentales</h3>
 <div class="mesa-grid">
 <details class="mesa-card expandable-card"><summary class="expandable-summary"><h4>🎫 Ticket</h4><p class="expand-preview">Registro histórico que permite gestionar y seguir una solicitud, incidencia o…</p><span class="expand-action"><span class="when-closed">Ver información completa</span><span class="when-open">Ocultar información</span><span aria-hidden="true" class="expand-chevron">⌄</span></span></summary><div class="expand-body"><p>Registro histórico que permite gestionar y seguir una solicitud, incidencia o problema desde su ingreso hasta su cierre.</p></div></details>
@@ -1386,7 +1436,7 @@ h1,h2,h3,h4,.hero.hero-v5 h1,.hero.hero-v5 h2,.v5-hero-panel h2,.brand-descripto
 <details class="mesa-card expandable-card"><summary class="expandable-summary"><h4>🌐 Problema</h4><p class="expand-preview">Causa, todavía desconocida o en investigación, de una o varias incidencias…</p><span class="expand-action"><span class="when-closed">Ver información completa</span><span class="when-open">Ocultar información</span><span aria-hidden="true" class="expand-chevron">⌄</span></span></summary><div class="expand-body"><p>Causa, todavía desconocida o en investigación, de una o varias incidencias relacionadas; por ejemplo, una falla general de conectividad.</p></div></details>
 </div>
 </div>
-<div class="mesa-block">
+<div class="mesa-block" id="mesa-proceso">
 <h3 class="mesa-subtitle">2. ¿Cómo se atiende un requerimiento?</h3>
 <div class="mesa-timeline">
 <div class="mesa-step"><b>01</b><strong>Ingreso</strong><p>Se informa el requerimiento y se crea el ticket.</p></div>
@@ -1396,7 +1446,7 @@ h1,h2,h3,h4,.hero.hero-v5 h1,.hero.hero-v5 h2,.v5-hero-panel h2,.brand-descripto
 <div class="mesa-step"><b>05</b><strong>Cierre</strong><p>Se registra la conformidad o se cierra según el procedimiento.</p></div>
 </div>
 </div>
-<div class="mesa-block">
+<div class="mesa-block" id="mesa-estados">
 <h3 class="mesa-subtitle">3. Estados de un ticket en Freshdesk</h3>
 <div class="mesa-grid">
 <details class="mesa-card expandable-card"><summary class="expandable-summary"><h4>🔵 Abierto</h4><p class="expand-preview">El ticket se ha registrado y está en proceso de atención por el equipo de…</p><span class="expand-action"><span class="when-closed">Ver información completa</span><span class="when-open">Ocultar información</span><span aria-hidden="true" class="expand-chevron">⌄</span></span></summary><div class="expand-body"><p>El ticket se ha registrado y está en proceso de atención por el equipo de soporte.</p></div></details>
@@ -1478,7 +1528,7 @@ h1,h2,h3,h4,.hero.hero-v5 h1,.hero.hero-v5 h2,.v5-hero-panel h2,.brand-descripto
 </div>
 <p class="matriz-nota">Clasificación de referencia: confirmar criterios vigentes con la Unidad de Informática.</p>
 </div>
-<div class="mesa-block">
+<div class="mesa-block" id="mesa-equipos">
 <h3 class="mesa-subtitle">5. Equipos y responsabilidades</h3>
 <div class="mesa-roles">
 <details class="mesa-card expandable-card"><summary class="expandable-summary"><h4>Soporte TI</h4><p class="expand-preview">Mantención y configuración de computadores y periféricos. Soporte de impresoras,…</p><span class="expand-action"><span class="when-closed">Ver información completa</span><span class="when-open">Ocultar información</span><span aria-hidden="true" class="expand-chevron">⌄</span></span></summary><div class="expand-body">
@@ -1774,7 +1824,7 @@ h1,h2,h3,h4,.hero.hero-v5 h1,.hero.hero-v5 h2,.v5-hero-panel h2,.brand-descripto
 <p class="rasci-ayuda">R: responsable · A: aprobador · S: soporte · C: consultado · I: informado · RA: responsable y aprobador · —: sin asignación indicada en el documento.</p>
 <p class="rasci-nota">Matriz interna incorporada para consulta. Verificar los nombres, las asignaciones y la autorización de difusión antes de publicar.</p>
 </div>
-<div class="mesa-block">
+<div class="mesa-block" id="mesa-unidades">
 <h3 class="mesa-subtitle">6. Unidades con atención prioritaria</h3>
 <div class="mesa-card">
 <p>El documento destaca unidades que prestan atención al público, como Dirección de Tránsito, Juzgado de Policía Local, Tesorería Municipal, Alcaldía, Rentas, OIRS, OMIL, recepción de DIDECO y Registro Social de Hogares. La prioridad específica depende del impacto y la urgencia de cada caso.</p>
@@ -1802,8 +1852,8 @@ h1,h2,h3,h4,.hero.hero-v5 h1,.hero.hero-v5 h2,.v5-hero-panel h2,.brand-descripto
 </div>
 </div>
 <div aria-hidden="true" class="section-index">04</div></div>
-<div class="organigram-panel">
-<div class="organigram-toolbar"><div class="viewer-meta"><span class="viewer-dot"></span><span>Visor interactivo</span></div>
+<div class="organigram-panel" id="organigrama-visor">
+<div class="organigram-toolbar" id="organigrama-controles"><div class="viewer-meta"><span class="viewer-dot"></span><span>Visor interactivo</span></div>
 <small>
 
         Usa la rueda para acercar o alejar. Mantén presionado el clic izquierdo para mover.
@@ -2500,4 +2550,58 @@ h1,h2,h3,h4,.hero.hero-v5 h1,.hero.hero-v5 h2,.v5-hero-panel h2,.brand-descripto
   window.addEventListener('scroll',updateBreadcrumb,{passive:true});
   updateBreadcrumb();
 })();
-</script></body></html>
+</script>
+<script id="navigation-submenus-script">
+// Submenús desplegables, conservando la navegación y datos existentes.
+(() => {
+  const grupos=Array.from(document.querySelectorAll('[data-nav-group]'));
+  function abrirGrupo(grupo,mostrar) {
+    grupos.forEach(g=>{
+      const activo=g===grupo && mostrar;
+      g.classList.toggle('is-expanded',activo);
+      const sub=g.querySelector('.section-subnav');
+      if (sub) sub.hidden=!activo;
+      const btn=g.querySelector('.nav-expand');
+      if (btn) btn.setAttribute('aria-expanded',String(activo));
+    });
+  }
+  function cerrarMenuMovil() {
+    const panel=document.getElementById('sidebar');
+    const fondo=document.getElementById('navShade');
+    panel?.classList.remove('is-open');
+    if (fondo) fondo.hidden=true;
+    document.body.classList.remove('nav-open');
+    document.getElementById('menuBtn')?.setAttribute('aria-expanded','false');
+  }
+  grupos.forEach(g=>{
+    const boton=g.querySelector('.nav-expand');
+    const principal=g.querySelector('.nav-group-heading .nav-link');
+    boton?.addEventListener('click',()=>abrirGrupo(g,!g.classList.contains('is-expanded')));
+    principal?.addEventListener('click',()=>abrirGrupo(g,true));
+    g.querySelectorAll('.section-subnav a').forEach(enlace=>{
+      enlace.addEventListener('click',evento=>{
+        const categoria=enlace.dataset.catalogCategory;
+        if (categoria) {
+          evento.preventDefault();
+          // Reutilizar buscador y filtro ya existentes en el catálogo.
+          selected=categoria;
+          search.value='';
+          renderFilters();
+          renderCatalog();
+          requestAnimationFrame(()=> {
+            const titulo=document.querySelector('#catalogContent .category');
+            (titulo||document.getElementById('catalogo')).scrollIntoView({behavior:'smooth',block:'start'});
+          });
+        } else {
+          const objetivo=document.querySelector(enlace.getAttribute('href'));
+          if (objetivo?.matches('details')) objetivo.open=true;
+        }
+        document.querySelectorAll('.section-subnav a.is-current').forEach(a=>a.classList.remove('is-current'));
+        enlace.classList.add('is-current');
+        cerrarMenuMovil();
+      });
+    });
+  });
+})();
+</script>
+</body></html>
