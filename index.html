@@ -654,35 +654,47 @@ body.compact-view .subsection {padding-top:19px}
 .k-command-list code{display:block;background:#193846;color:#e8f9ff;padding:10px 13px;margin-top:7px;border-radius:7px;overflow-x:auto;font-size:12px;white-space:nowrap;font-family:Consolas,'Liberation Mono',monospace}
 @media(max-width:1000px){.k-partition-options{grid-template-columns:1fr}}
 
-/* Información contextual sobre MediCat, solo dentro del proceso de instalación. */
+/* MediCat: explicación al pasar el cursor y enlace directo al sitio oficial. */
 #k-instalacion{overflow:visible}
-.k-medicat-info{position:relative;display:inline-block;vertical-align:baseline;font-weight:normal;z-index:2}
-.k-medicat-info[open]{z-index:14}
-.k-medicat-info>summary{display:inline-flex;align-items:baseline;gap:4px;list-style:none;cursor:pointer;color:#006f8e;border-bottom:1px dotted #1585a3;font-weight:800;line-height:1.3;white-space:nowrap}
-.k-medicat-info>summary::-webkit-details-marker{display:none}
-.k-medicat-info>summary::marker{content:""}
-.k-medicat-info>summary:hover,.k-medicat-info>summary:focus-visible{color:#004e66;background:#e9f7fa;border-radius:3px}
+.k-medicat-info{position:relative;display:inline-block;vertical-align:baseline;z-index:2}
+.k-medicat-link{display:inline-flex;align-items:baseline;gap:4px;color:#006f8e;border-bottom:1px dotted #1585a3;font-weight:800;line-height:1.3;text-decoration:none;white-space:nowrap;cursor:pointer}
+.k-medicat-link:hover,.k-medicat-link:focus-visible{color:#004e66;background:#e9f7fa;border-radius:3px}
 .k-medicat-info-icon{font-size:11px;color:#1487a4}
-.k-medicat-popover{position:absolute;top:calc(100% + 10px);left:0;width:min(375px,calc(100vw - 75px));background:#fff;border:1px solid #a9d7e2;box-shadow:0 14px 32px rgba(21,64,83,.19);border-radius:12px;padding:17px 18px;color:var(--texto);font-size:12px;line-height:1.65;white-space:normal;font-weight:400;text-align:left;}
+.k-medicat-popover{position:absolute;top:calc(100% + 10px);left:0;z-index:30;width:min(375px,calc(100vw - 70px));background:#fff;border:1px solid #a9d7e2;box-shadow:0 14px 32px rgba(21,64,83,.19);border-radius:12px;padding:16px 18px;color:var(--texto);font-size:12px;line-height:1.65;white-space:normal;font-weight:400;text-align:left;visibility:hidden;opacity:0;transform:translateY(-5px);pointer-events:none;transition:opacity .18s ease,transform .18s ease,visibility .18s ease}
+.k-medicat-info:hover .k-medicat-popover,.k-medicat-info:focus-within .k-medicat-popover{visibility:visible;opacity:1;transform:translateY(0)}
 .k-medicat-popover::before{content:"";position:absolute;top:-6px;left:20px;width:10px;height:10px;border-left:1px solid #a9d7e2;border-top:1px solid #a9d7e2;background:#fff;transform:rotate(45deg)}
-.k-medicat-popover-title{font-size:15px;font-weight:800;color:var(--oscuro);margin-bottom:10px}
-.k-medicat-popover-subtitle{font-weight:800;color:#007793;margin-top:12px}
-.k-medicat-popover p{margin:5px 0 9px;line-height:1.65}
-.k-medicat-web{display:inline-flex;gap:5px;align-items:center;background:var(--azul);color:#fff!important;font-weight:800;border-radius:7px;padding:9px 12px;margin-top:7px;text-decoration:none}
-.k-medicat-web:hover,.k-medicat-web:focus-visible{background:#006b84;color:#fff!important}
-.k-medicat-footnote{display:block;color:var(--gris);font-size:10px;margin-top:6px}
-@media(max-width:650px){.k-medicat-popover{left:-34px;width:min(345px,calc(100vw - 104px));padding:14px 15px}.k-medicat-popover::before{left:54px}}
+.k-medicat-popover-title{display:block;font-size:15px;font-weight:800;color:var(--oscuro);margin-bottom:10px}
+.k-medicat-popover-subtitle{display:block;font-weight:800;color:#007793;margin-top:12px}
+.k-medicat-popover .k-medicat-text{display:block;margin:5px 0 9px;line-height:1.65}
+.k-medicat-footnote{display:block;color:#006f8e;font-size:11px;font-weight:700;margin-top:10px}
+@media(max-width:650px){.k-medicat-popover{left:-24px;width:min(340px,calc(100vw - 70px));padding:14px 15px}.k-medicat-popover::before{left:43px}}
 /* Software posterior a la instalación: diseño institucional existente. */
 .k-software-list{display:grid;gap:10px;margin:14px 0}
 .k-software-item{border:1px solid var(--borde);border-radius:9px;padding:14px;background:#f8fbfc}
 .k-software-item p{margin:7px 0 0;line-height:1.7}
 .k-software-head{display:flex;justify-content:space-between;align-items:center;gap:9px;flex-wrap:wrap}
 .k-software-head>strong{color:var(--oscuro);font-size:13px}
-.k-software-status{font-size:10px;background:#f2f4f5;color:#526875;border:1px solid #dbe4e8;border-radius:20px;padding:3px 8px;font-weight:750}
+.k-software-clarification{font-size:11.5px;color:var(--gris)}
 .k-remote-choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:8px}
 .k-remote-choices p{padding:10px;background:white;border:1px solid var(--borde);border-radius:7px;margin:0;line-height:1.65}
 @media(max-width:750px){.k-remote-choices{grid-template-columns:1fr}}
 
+</style>
+<style id="medicat-tooltip-styles">
+/* MediCat: explicación al pasar el cursor y enlace directo al sitio oficial. */
+#k-instalacion{overflow:visible}
+.k-medicat-info{position:relative;display:inline-block;vertical-align:baseline;z-index:2}
+.k-medicat-link{display:inline-flex;align-items:baseline;gap:4px;color:#006f8e;border-bottom:1px dotted #1585a3;font-weight:800;line-height:1.3;text-decoration:none;white-space:nowrap;cursor:pointer}
+.k-medicat-link:hover,.k-medicat-link:focus-visible{color:#004e66;background:#e9f7fa;border-radius:3px}
+.k-medicat-info-icon{font-size:11px;color:#1487a4}
+.k-medicat-popover{position:absolute;top:calc(100% + 10px);left:0;z-index:30;width:min(375px,calc(100vw - 70px));background:#fff;border:1px solid #a9d7e2;box-shadow:0 14px 32px rgba(21,64,83,.19);border-radius:12px;padding:16px 18px;color:var(--texto);font-size:12px;line-height:1.65;white-space:normal;font-weight:400;text-align:left;visibility:hidden;opacity:0;transform:translateY(-5px);pointer-events:none;transition:opacity .18s ease,transform .18s ease,visibility .18s ease}
+.k-medicat-info:hover .k-medicat-popover,.k-medicat-info:focus-within .k-medicat-popover{visibility:visible;opacity:1;transform:translateY(0)}
+.k-medicat-popover::before{content:"";position:absolute;top:-6px;left:20px;width:10px;height:10px;border-left:1px solid #a9d7e2;border-top:1px solid #a9d7e2;background:#fff;transform:rotate(45deg)}
+.k-medicat-popover-title{display:block;font-size:15px;font-weight:800;color:var(--oscuro);margin-bottom:10px}
+.k-medicat-popover-subtitle{display:block;font-weight:800;color:#007793;margin-top:12px}
+.k-medicat-popover .k-medicat-text{display:block;margin:5px 0 9px;line-height:1.65}
+.k-medicat-footnote{display:block;color:#006f8e;font-size:11px;font-weight:700;margin-top:10px}
+@media(max-width:650px){.k-medicat-popover{left:-24px;width:min(340px,calc(100vw - 70px));padding:14px 15px}.k-medicat-popover::before{left:43px}}
 </style>
 </head>
 <body>
@@ -784,17 +796,16 @@ ObdUvrFtYttVsjdki6pK6gL+GLXf97kvLWCFMCpD9gawBQi83QjtXeaLey1CtOIQPhaGDsrF3a+p2u3m
         <ol class="k-step-list">
           <li>Disponga de la <strong>imagen ISO de Kubuntu</strong> correspondiente a la versión que se instalará.</li>
           <li>Prepare una <strong>unidad USB booteable</strong> con la ISO, utilizando la herramienta de arranque autorizada. Verifique que el dispositivo esté listo antes de reiniciar el computador.</li>
-          <li>Si utilizará <details class="k-medicat-info" id="medicatQuickInfo">
-              <summary aria-label="Mostrar explicación sobre MediCat USB">MediCat <span class="k-medicat-info-icon" aria-hidden="true">ⓘ</span></summary>
-              <div class="k-medicat-popover">
-                <div class="k-medicat-popover-title">🧰 ¿Qué es MediCat USB?</div>
-                <p><strong>MediCat USB</strong> es un conjunto de herramientas que se prepara en una memoria USB. Se utiliza para revisar, reparar o recuperar computadores, incluso cuando el sistema operativo instalado no inicia correctamente.</p>
-                <div class="k-medicat-popover-subtitle">¿Para qué se utiliza aquí?</div>
-                <p>En este procedimiento permite iniciar el equipo desde el USB y acceder a un menú desde el cual se puede seleccionar la imagen de Kubuntu preparada previamente. <strong>MediCat no instala Kubuntu por sí mismo:</strong> ayuda a iniciar su instalador.</p>
-                <a class="k-medicat-web" href="https://medicatusb.com/" target="_blank" rel="noopener noreferrer" aria-label="Abrir el sitio web oficial de MediCat en una pestaña nueva">🌐 Visitar sitio web oficial de MediCat <span aria-hidden="true">↗</span></a>
-                <span class="k-medicat-footnote">Enlace externo al sitio oficial del proyecto.</span>
-              </div>
-            </details>, asegúrese de que la ISO de Kubuntu esté disponible en el medio de arranque para seleccionarla desde su menú.</li>
+          <li>Si utilizará <span class="k-medicat-info">
+              <a class="k-medicat-link" href="https://medicatusb.com/" target="_blank" rel="noopener noreferrer" aria-describedby="medicatQuickInfo" aria-label="MediCat USB: abrir su sitio web oficial en una pestaña nueva">MediCat <span class="k-medicat-info-icon" aria-hidden="true">ⓘ</span></a>
+              <span class="k-medicat-popover" id="medicatQuickInfo" role="tooltip">
+                <span class="k-medicat-popover-title">🧰 ¿Qué es MediCat USB?</span>
+                <span class="k-medicat-text"><strong>MediCat USB</strong> es un conjunto de herramientas que se prepara en una memoria USB. Sirve para diagnosticar, reparar y recuperar computadores, incluso cuando su sistema operativo no inicia correctamente.</span>
+                <span class="k-medicat-popover-subtitle">¿Para qué se utiliza aquí?</span>
+                <span class="k-medicat-text">Permite iniciar el equipo desde un USB con herramientas de recuperación y, si se ha preparado la imagen correspondiente, acceder al instalador de Kubuntu. <strong>MediCat no instala Kubuntu por sí mismo.</strong></span>
+                <span class="k-medicat-footnote">Haz clic en «MediCat» para abrir su página oficial ↗</span>
+              </span>
+            </span>, asegúrese de que la ISO de Kubuntu esté disponible en el medio de arranque para seleccionarla desde su menú.</li>
         </ol>
 
         <h4>2. Iniciar el computador desde el USB</h4>
@@ -856,34 +867,29 @@ ObdUvrFtYttVsjdki6pK6gL+GLXf97kvLWCFMCpD9gawBQi83QjtXeaLey1CtOIQPhaGDsrF3a+p2u3m
     <details class="card wide" id="k-aplicaciones">
       <summary>
         <h3>🧰 Aplicaciones posteriores a la instalación</h3>
-        <p class="short">Herramientas según su función: evitar aplicaciones duplicadas y validar la selección institucional.</p>
+        <p class="short">Una aplicación por función: LibreOffice u OnlyOffice para ofimática y RustDesk u AnyDesk para soporte remoto.</p>
         <span class="expand-hint">Ver información completa</span>
       </summary>
       <div class="card-body">
-        <p>Después de instalar y actualizar Kubuntu, configure <strong>solo las aplicaciones necesarias y autorizadas</strong> para el puesto de trabajo. No es obligatorio instalar todas las alternativas disponibles.</p>
+        <p>Después de instalar y actualizar Kubuntu, configure <strong>las aplicaciones utilizadas por la Municipalidad</strong> de acuerdo con las necesidades de cada puesto de trabajo. No es necesario instalar todos los programas en cada equipo.</p>
         <div class="k-software-list">
           <div class="k-software-item">
-            <div class="k-software-head"><strong>🌐 Navegación web · Google Chrome</strong><span class="k-software-status">Pendiente de validar</span></div>
-            <p>Para consultar portales institucionales y utilizar aplicaciones web. Confirmar con Sebastián si es el navegador establecido para estos equipos.</p>
+            <div class="k-software-head"><strong>🌐 Navegación web · Google Chrome</strong></div>
+            <p>Navegador web utilizado para consultar portales institucionales, acceder a servicios en línea y utilizar aplicaciones web.</p>
           </div>
           <div class="k-software-item">
-            <div class="k-software-head"><strong>📞 Telefonía · Linphone</strong><span class="k-software-status">Pendiente de validar</span></div>
+            <div class="k-software-head"><strong>📞 Telefonía · Linphone</strong></div>
             <p>Cliente de telefonía por Internet, cuando el puesto requiera comunicaciones mediante una cuenta o extensión configurada por Informática.</p>
           </div>
           <div class="k-software-item">
-            <div class="k-software-head"><strong>📄 Ofimática · Una suite institucional</strong><span class="k-software-status">Por definir con Sebastián</span></div>
-            <p>Instalar <strong>una sola suite ofimática</strong> para documentos, planillas y presentaciones. La aplicación concreta debe ser indicada por Sebastián; hasta entonces, no se recomienda instalar dos opciones equivalentes.</p>
+            <div class="k-software-head"><strong>📄 Ofimática · LibreOffice u OnlyOffice</strong></div>
+            <p>La Municipalidad utiliza <strong>LibreOffice y OnlyOffice</strong> para crear y editar documentos, planillas de cálculo y presentaciones. Se debe elegir e instalar <strong>LibreOffice u OnlyOffice</strong> según las necesidades del puesto de trabajo; no es necesario instalar las dos suites en el mismo equipo.</p>
           </div>
           <div class="k-software-item">
-            <div class="k-software-head"><strong>🖥️ Soporte remoto · Elegir según el escenario</strong><span class="k-software-status">Uso por confirmar</span></div>
-            <div class="k-remote-choices">
-              <p><strong>RustDesk:</strong> asistencia a equipos <strong>dentro de la red local</strong>, según el procedimiento descrito para la Unidad de Informática.</p>
-              <p><strong>AnyDesk:</strong> asistencia a equipos <strong>fuera de la red local</strong>, cuando este tipo de acceso esté autorizado.</p>
-            </div>
-            <p>No instalar ambos automáticamente: utilizar únicamente la herramienta aprobada para el tipo de soporte requerido. Esta distinción describe el <strong>uso previsto en el manual</strong>, no una limitación técnica de los programas.</p>
+            <div class="k-software-head"><strong>🖥️ Soporte remoto · RustDesk u AnyDesk</strong></div>
+            <p>La Municipalidad utiliza <strong>RustDesk y AnyDesk</strong> para brindar soporte remoto. Se debe elegir e instalar <strong>RustDesk u AnyDesk</strong> según la ubicación y las condiciones de conexión del equipo: <strong>RustDesk</strong> es la opción principal para los computadores conectados a la <strong>red local institucional</strong>, mientras que <strong>AnyDesk</strong> se utiliza para asistir a equipos <strong>fuera de la red local</strong>, como los de dependencias alejadas en <strong>Coya</strong>. No es necesario instalar ambos programas en el mismo equipo, salvo que la Unidad de Informática lo requiera.</p>
           </div>
         </div>
-        <div class="notice"><strong>Validación antes de publicar:</strong> confirmar con Sebastián la suite de ofimática seleccionada, las aplicaciones de navegación y telefonía y los criterios de uso e instalación de RustDesk y AnyDesk. Mientras esté pendiente, esta sección es orientativa y no una instrucción de instalación obligatoria.</div>
       </div>
     </details>
   </div></section>
@@ -908,7 +914,7 @@ ObdUvrFtYttVsjdki6pK6gL+GLXf97kvLWCFMCpD9gawBQi83QjtXeaLey1CtOIQPhaGDsrF3a+p2u3m
     <div class="subsection" id="unidades"><h3>6. Unidades con atención prioritaria</h3><details class="card"><summary><h4>Dependencias que atienden público</h4><p class="short">Direcciones y unidades con continuidad operativa relevante.</p><span class="expand-hint">Ver información completa</span></summary><div class="card-body"><p>Dirección de Tránsito, Juzgado de Policía Local, Tesorería Municipal, Alcaldía, Rentas, OIRS, OMIL, recepción de DIDECO y Registro Social de Hogares, entre otras. La prioridad de cada situación se determina según su impacto y urgencia.</p></div></details></div>
   </section>
   <section class="chapter" id="organigrama"><div class="eyebrow">04 / ESTRUCTURA INSTITUCIONAL</div><h2 class="organigrama-heading"><img class="organigrama-heading-logo" src="Organigrama.png" alt="Icono de organigrama">Organigrama interactivo</h2><p class="intro">Rueda para ampliar o reducir, clic izquierdo sostenido para mover el diagrama y botón Restablecer para volver a la vista general.</p><div class="rule"></div><div class="diagram-panel" id="diagramPanel"><div class="diagram-toolbar"><small>Rueda: zoom · Clic sostenido: mover</small><div class="zoom-buttons"><output id="zoomValue">100%</output><button id="zoomOut" type="button">−</button><button id="resetZoom" type="button">Restablecer</button><button id="zoomIn" type="button">+</button><button id="expandDiagram" type="button">⛶</button></div></div><div class="diagram-area" id="diagramArea"><div class="diagram-canvas" id="diagramCanvas"><img id="diagramImage" draggable="false" src="Organigrama-Global.drawio.svg" alt="Organigrama de la Municipalidad de Machalí"></div></div><div class="diagram-missing" id="diagramMissing">Para mostrar el organigrama, coloca <strong>Organigrama-Global.drawio.svg</strong> en la misma carpeta que index.html.</div></div></section>
-  <footer class="footer"><div><strong>Manual de Inducción TI</strong><br>Municipalidad de Machalí · Unidad de Informática</div><a href="#inicio">Volver al inicio ↑</a><div><strong1>Diseñado por Pedro</strong></div></footer>
+  <footer class="footer"><div><strong>Manual de Inducción TI</strong><br>Municipalidad de Machalí · Unidad de Informática</div><a href="#inicio">Volver al inicio ↑</a><div><strong>Diseñado por Pedro Contreras Lucero, Practicante de informatica</strong></div></footer>
  </div>
 </div>
 <button class="back-to-top" id="backToTop" type="button" aria-label="Volver al inicio" title="Volver al inicio">↑</button>
@@ -1355,19 +1361,6 @@ readingModeBtn.addEventListener('click', () => {
   window.addEventListener('resize',updateScroll);
   topButton.addEventListener('click',()=>window.scrollTo({top:0,behavior:window.matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'}));
   updateScroll();
-})();
-
-// ===== INFORMACIÓN CONTEXTUAL DE MEDICAT =====
-// Se puede abrir mediante clic o teclado, también en dispositivos táctiles.
-(function(){
-  const info=document.getElementById('medicatQuickInfo');
-  if(!info)return;
-  document.addEventListener('click',event=>{
-    if(info.open&&!info.contains(event.target))info.open=false;
-  });
-  document.addEventListener('keydown',event=>{
-    if(event.key==='Escape'&&info.open){info.open=false;info.querySelector('summary').focus()}
-  });
 })();
 </script>
 
