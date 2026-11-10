@@ -653,6 +653,27 @@ body.compact-view .subsection {padding-top:19px}
 .k-command-list span{display:block}
 .k-command-list code{display:block;background:#193846;color:#e8f9ff;padding:10px 13px;margin-top:7px;border-radius:7px;overflow-x:auto;font-size:12px;white-space:nowrap;font-family:Consolas,'Liberation Mono',monospace}
 @media(max-width:1000px){.k-partition-options{grid-template-columns:1fr}}
+
+/* Glosario y software de Kubuntu: herramientas discretas e institucionales */
+.k-term{color:#006f8e;text-decoration:none;border-bottom:1px dotted #1585a3;font-weight:700;cursor:help;white-space:normal}
+.k-term:hover,.k-term:focus-visible{background:#e9f7fa;color:#004e66;border-radius:3px}
+.k-term span{font-size:.78em;font-weight:700;vertical-align:baseline}
+.k-glossary-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:14px 0 0}
+.k-glossary-grid>div{padding:14px 15px;border:1px solid var(--borde);border-radius:9px;background:#f7fbfc}
+.k-glossary-grid dt{font-size:13px;font-weight:800;color:var(--oscuro);margin-bottom:5px}
+.k-glossary-grid dd{font-size:12px;line-height:1.75;margin:0;color:var(--texto)}
+.k-software-list{display:grid;gap:10px;margin:14px 0}
+.k-software-item{border:1px solid var(--borde);border-radius:9px;padding:14px;background:#f8fbfc}
+.k-software-item p{margin:7px 0 0;line-height:1.7}
+.k-software-head{display:flex;justify-content:space-between;align-items:center;gap:9px;flex-wrap:wrap}
+.k-software-head>strong{color:var(--oscuro);font-size:13px}
+.k-software-status{font-size:10px;background:#f2f4f5;color:#526875;border:1px solid #dbe4e8;border-radius:20px;padding:3px 8px;font-weight:750}
+.k-remote-choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:8px}
+.k-remote-choices p{padding:10px;background:white;border:1px solid var(--borde);border-radius:7px;margin:0;line-height:1.65}
+@media(max-width:750px){.k-glossary-grid,.k-remote-choices{grid-template-columns:1fr}}
+.k-glossary-grid{grid-template-columns:1fr;max-width:920px}
+.k-glossary-grid dd + dd{margin-top:9px}
+.k-glossary-grid code{background:#e9f3f6;border-radius:4px;padding:1px 5px;font-size:.96em}
 </style>
 </head>
 <body>
@@ -689,7 +710,7 @@ ObdUvrFtYttVsjdki6pK6gL+GLXf97kvLWCFMCpD9gawBQi83QjtXeaLey1CtOIQPhaGDsrF3a+p2u3m
      las imágenes de los títulos de sección. -->
  <div class="nav-label">CONTENIDOS DEL PORTAL</div>
  <details class="nav-group" open><summary><span class="nav-icon"><svg class="nav-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m3 10 9-7 9 7M5 9v12h14V9M9 21v-7h6v7"/></svg></span>Inicio<span class="chevron">⌄</span></summary><div class="nav-children"><a href="#inicio">Portada</a><a href="#kubuntu">Comenzar el manual</a></div></details>
- <details class="nav-group"><summary><span class="nav-icon"><svg class="nav-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="15" rx="2"/><path d="M7 9l3 3-3 3M12.5 15H17M8 22h8M12 19v3"/></svg></span>Instalación de Kubuntu<span class="chevron">⌄</span></summary><div class="nav-children"><a href="#k-porque">¿Por qué Kubuntu?</a><a href="#k-instalacion">Proceso de instalación</a><a href="#k-actualizacion">Actualización del sistema</a><a href="#k-aplicaciones">Aplicaciones</a></div></details>
+ <details class="nav-group"><summary><span class="nav-icon"><svg class="nav-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="15" rx="2"/><path d="M7 9l3 3-3 3M12.5 15H17M8 22h8M12 19v3"/></svg></span>Instalación de Kubuntu<span class="chevron">⌄</span></summary><div class="nav-children"><a href="#k-porque">¿Por qué Kubuntu?</a><a href="#k-instalacion">Proceso de instalación</a><a href="#k-actualizacion">Actualización del sistema</a><a href="#k-aplicaciones">Aplicaciones</a><a href="#k-glosario">Glosario técnico</a></div></details>
  <details class="nav-group"><summary><span class="nav-icon"><svg class="nav-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="3" width="16" height="7" rx="2"/><rect x="4" y="13" width="16" height="7" rx="2"/><path d="M8 6.5h.01M8 16.5h.01M11 6.5h6M11 16.5h6"/></svg></span>Servicios TI<span class="chevron">⌄</span></summary><div class="nav-children"><a href="#catalogo" data-cat="Todas">Todos los servicios</a><a href="#catalogo" data-cat="Asesoría técnica">Asesoría técnica</a><a href="#catalogo" data-cat="Equipamiento y hardware">Equipamiento y hardware</a><a href="#catalogo" data-cat="Gestión de identidad">Gestión de identidad</a><a href="#catalogo" data-cat="Internet y redes">Internet y redes</a><a href="#catalogo" data-cat="Respaldo y almacenamiento">Respaldos</a><a href="#catalogo" data-cat="Servicios de impresión">Impresión</a><a href="#catalogo" data-cat="Sistemas municipales">Sistemas municipales</a><a href="#catalogo" data-cat="Software y ofimática">Software y ofimática</a><a href="#catalogo" data-cat="Telefonía">Telefonía</a></div></details>
  <details class="nav-group"><summary><span class="nav-icon"><svg class="nav-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 13v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="12" width="4" height="7" rx="2"/><rect x="17" y="12" width="4" height="7" rx="2"/><path d="M19 19c0 2-2 3-5 3h-2"/></svg></span>Mesa de Ayuda<span class="chevron">⌄</span></summary><div class="nav-children"><a href="#conceptos">Conceptos fundamentales</a><a href="#proceso">Proceso de atención</a><a href="#estados">Estados del ticket</a><a href="#prioridades">Matriz de prioridades</a><a href="#responsabilidades">Equipos y responsabilidades</a><a href="#rasci">Matriz RASCI</a><a href="#unidades">Unidades prioritarias</a></div></details>
  <details class="nav-group"><summary><span class="nav-icon"><svg class="nav-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="2" width="6" height="5" rx="1"/><rect x="2" y="17" width="6" height="5" rx="1"/><rect x="9" y="17" width="6" height="5" rx="1"/><rect x="16" y="17" width="6" height="5" rx="1"/><path d="M12 7v5M5 17v-5h14v5M12 12v5"/></svg></span>Organigrama<span class="chevron">⌄</span></summary><div class="nav-children"><a href="#organigrama">Visor institucional</a><a href="#organigrama">Zoom y movimiento</a></div></details>
@@ -754,7 +775,7 @@ ObdUvrFtYttVsjdki6pK6gL+GLXf97kvLWCFMCpD9gawBQi83QjtXeaLey1CtOIQPhaGDsrF3a+p2u3m
         <ol class="k-step-list">
           <li>Disponga de la <strong>imagen ISO de Kubuntu</strong> correspondiente a la versión que se instalará.</li>
           <li>Prepare una <strong>unidad USB booteable</strong> con la ISO, utilizando la herramienta de arranque autorizada. Verifique que el dispositivo esté listo antes de reiniciar el computador.</li>
-          <li>Si utilizará <strong>MediCat</strong>, asegúrese de que la ISO de Kubuntu esté disponible en el medio de arranque para seleccionarla desde su menú.</li>
+          <li>Si utilizará <a class="k-term" href="#k-glosario" title="Herramientas de mantenimiento en una memoria USB; aquí se usan para iniciar la instalación de Kubuntu." aria-label="Consultar explicación sencilla de MediCat en el glosario"><strong>MediCat</strong><span aria-hidden="true"> ⓘ</span></a> (un conjunto de herramientas de arranque y mantenimiento en una memoria USB), asegúrese de que la ISO de Kubuntu esté disponible en el medio de arranque para seleccionarla desde su menú.</li>
         </ol>
 
         <h4>2. Iniciar el computador desde el USB</h4>
@@ -779,7 +800,7 @@ ObdUvrFtYttVsjdki6pK6gL+GLXf97kvLWCFMCpD9gawBQi83QjtXeaLey1CtOIQPhaGDsrF3a+p2u3m
         <h4>4. Elegir el tipo de instalación y el particionado</h4>
         <p>En esta etapa se determina cómo se utilizará el disco. Revise cuidadosamente el disco seleccionado y conozca las opciones antes de continuar:</p>
         <div class="k-partition-options">
-          <div class="k-option"><strong>🗑️ Borrar disco e instalar Kubuntu (instalación limpia)</strong><p>Elimina el contenido existente en el disco seleccionado e instala Kubuntu desde cero. El instalador realiza el particionado automático; en una instalación UEFI habitual, puede crear la partición <code>/boot/efi</code> y la partición raíz <code>/</code>. La gestión del intercambio (swap) depende de la versión y configuración utilizada.</p><p><strong>Úsela únicamente</strong> si se ha confirmado que no se requiere conservar información y existe autorización para borrar el disco.</p></div>
+          <div class="k-option"><strong>🗑️ Borrar disco e instalar Kubuntu (instalación limpia)</strong><p>Elimina el contenido existente en el disco seleccionado e instala Kubuntu desde cero. El instalador realiza el particionado automático; en una instalación <a class="k-term" href="#k-glosario" title="Sistema interno del equipo que participa en su encendido y permite iniciar Kubuntu." aria-label="Consultar explicación sencilla de UEFI en el glosario">UEFI<span aria-hidden="true"> ⓘ</span></a> habitual, puede crear la partición <code>/boot/efi</code> y la partición raíz <code>/</code>. La gestión de la memoria de intercambio (<a class="k-term" href="#k-glosario" title="Espacio del disco que Linux puede usar de apoyo cuando necesita más memoria." aria-label="Consultar explicación sencilla de swap en el glosario">swap<span aria-hidden="true"> ⓘ</span></a>) depende de la versión y configuración utilizada.</p><p><strong>Úsela únicamente</strong> si se ha confirmado que no se requiere conservar información y existe autorización para borrar el disco.</p></div>
           <div class="k-option"><strong>🪟 Instalar junto a Windows (Dual Boot)</strong><p>Permite conservar Windows e instalar Kubuntu en otra parte del disco, de modo que se pueda elegir el sistema operativo al iniciar el computador. Requiere revisar el espacio disponible, la estructura de las particiones y disponer de respaldo previo, ya que modificar particiones implica riesgos.</p></div>
           <div class="k-option"><strong>🛠️ Particionamiento manual</strong><p>Permite crear o modificar particiones y elegir puntos de montaje específicos. Está orientado a quienes conocen la estructura del disco y los requisitos de arranque del equipo.</p></div>
         </div>
@@ -796,7 +817,7 @@ ObdUvrFtYttVsjdki6pK6gL+GLXf97kvLWCFMCpD9gawBQi83QjtXeaLey1CtOIQPhaGDsrF3a+p2u3m
       </div>
     </details>
 
-    <details class="card" id="k-actualizacion">
+    <details class="card wide" id="k-actualizacion">
       <summary>
         <h3>🔄 Actualización del sistema</h3>
         <p class="short">Primer mantenimiento después de instalar Kubuntu.</p>
@@ -813,21 +834,65 @@ ObdUvrFtYttVsjdki6pK6gL+GLXf97kvLWCFMCpD9gawBQi83QjtXeaLey1CtOIQPhaGDsrF3a+p2u3m
       </div>
     </details>
 
-    <details class="card" id="k-aplicaciones">
+    <details class="card wide" id="k-aplicaciones">
       <summary>
         <h3>🧰 Aplicaciones posteriores a la instalación</h3>
-        <p class="short">Herramientas de comunicación, ofimática y soporte remoto.</p>
+        <p class="short">Herramientas según su función: evitar aplicaciones duplicadas y validar la selección institucional.</p>
         <span class="expand-hint">Ver información completa</span>
       </summary>
       <div class="card-body">
-        <ul>
-          <li><strong>Google Chrome:</strong> navegación y aplicaciones web.</li>
-          <li><strong>Linphone:</strong> telefonía y comunicaciones.</li>
-          <li><strong>RustDesk:</strong> asistencia remota dentro de la red.</li>
-          <li><strong>AnyDesk:</strong> asistencia remota complementaria.</li>
-          <li><strong>ONLYOFFICE:</strong> edición de documentos.</li>
-          <li><strong>LibreOffice:</strong> herramientas de ofimática.</li>
-        </ul>
+        <p>Después de instalar y actualizar Kubuntu, configure <strong>solo las aplicaciones necesarias y autorizadas</strong> para el puesto de trabajo. No es obligatorio instalar todas las alternativas disponibles.</p>
+        <div class="k-software-list">
+          <div class="k-software-item">
+            <div class="k-software-head"><strong>🌐 Navegación web · Google Chrome</strong><span class="k-software-status">Pendiente de validar</span></div>
+            <p>Para consultar portales institucionales y utilizar aplicaciones web. Confirmar con Sebastián si es el navegador establecido para estos equipos.</p>
+          </div>
+          <div class="k-software-item">
+            <div class="k-software-head"><strong>📞 Telefonía · Linphone</strong><span class="k-software-status">Pendiente de validar</span></div>
+            <p>Cliente de telefonía por Internet, cuando el puesto requiera comunicaciones mediante una cuenta o extensión configurada por Informática.</p>
+          </div>
+          <div class="k-software-item">
+            <div class="k-software-head"><strong>📄 Ofimática · Una suite institucional</strong><span class="k-software-status">Por definir con Sebastián</span></div>
+            <p>Instalar <strong>una sola suite ofimática</strong> para documentos, planillas y presentaciones. La aplicación concreta debe ser indicada por Sebastián; hasta entonces, no se recomienda instalar dos opciones equivalentes.</p>
+          </div>
+          <div class="k-software-item">
+            <div class="k-software-head"><strong>🖥️ Soporte remoto · Elegir según el escenario</strong><span class="k-software-status">Uso por confirmar</span></div>
+            <div class="k-remote-choices">
+              <p><strong>RustDesk:</strong> asistencia a equipos <strong>dentro de la red local</strong>, según el procedimiento descrito para la Unidad de Informática.</p>
+              <p><strong>AnyDesk:</strong> asistencia a equipos <strong>fuera de la red local</strong>, cuando este tipo de acceso esté autorizado.</p>
+            </div>
+            <p>No instalar ambos automáticamente: utilizar únicamente la herramienta aprobada para el tipo de soporte requerido. Esta distinción describe el <strong>uso previsto en el manual</strong>, no una limitación técnica de los programas.</p>
+          </div>
+        </div>
+        <div class="notice"><strong>Validación antes de publicar:</strong> confirmar con Sebastián la suite de ofimática seleccionada, las aplicaciones de navegación y telefonía y los criterios de uso e instalación de RustDesk y AnyDesk. Mientras esté pendiente, esta sección es orientativa y no una instrucción de instalación obligatoria.</div>
+      </div>
+    </details>
+    <details class="card wide" id="k-glosario">
+      <summary>
+        <h3>📖 Glosario de términos técnicos</h3>
+        <p class="short">Explicaciones sencillas de MediCat USB, UEFI y swap, con ejemplos de su uso en la instalación.</p>
+        <span class="expand-hint">Ver conceptos</span>
+      </summary>
+      <div class="card-body">
+        <p>Este glosario explica tres términos importantes que aparecen en la guía. Puede consultar cada definición directamente aquí o pulsar las palabras marcadas con <strong>ⓘ</strong> durante la lectura.</p>
+        <dl class="k-glossary-grid">
+          <div>
+            <dt>🧰 MediCat USB</dt>
+            <dd><strong>¿Qué es?</strong> Es un conjunto de herramientas que se lleva en una memoria USB para revisar, reparar o preparar computadores. Se utiliza antes de que arranque el sistema operativo instalado en el equipo.</dd>
+            <dd><strong>¿Para qué lo usamos aquí?</strong> Al iniciar el computador desde el USB que contiene MediCat, se abre un menú. Desde allí se selecciona el archivo de Kubuntu para comenzar su instalación. <strong>MediCat no es Kubuntu y no lo instala por sí solo:</strong> ayuda a poner en marcha el instalador.</dd>
+          </div>
+          <div>
+            <dt>💻 UEFI</dt>
+            <dd><strong>¿Qué es?</strong> Es un sistema incorporado al computador que empieza a trabajar en cuanto se enciende, antes de que se abra Kubuntu o Windows. Se encarga de preparar el arranque del equipo.</dd>
+            <dd><strong>¿Por qué aparece en la instalación?</strong> Cuando Kubuntu se instala en un equipo configurado para arrancar mediante UEFI, puede necesitar una pequeña partición especial, llamada <code>/boot/efi</code>, para guardar archivos que ayudan al computador a iniciar el sistema operativo.</dd>
+          </div>
+          <div>
+            <dt>🗂️ Swap (memoria de intercambio)</dt>
+            <dd><strong>¿Qué es?</strong> Es un espacio del almacenamiento del computador que Linux puede utilizar como apoyo de la memoria RAM cuando necesita más espacio para manejar tareas y programas.</dd>
+            <dd><strong>¿Qué significa al instalar Kubuntu?</strong> Según la versión y la configuración elegida, ese espacio puede organizarse como un archivo o como una partición. <strong>No es memoria RAM adicional:</strong> es un recurso de apoyo que suele ser más lento que la RAM.</dd>
+          </div>
+        </dl>
+        <div class="notice"><strong>Consejo:</strong> no es necesario memorizar estos términos. El glosario está disponible para consultarlos mientras sigue los pasos del procedimiento.</div>
       </div>
     </details>
   </div></section>
@@ -1300,6 +1365,18 @@ readingModeBtn.addEventListener('click', () => {
   topButton.addEventListener('click',()=>window.scrollTo({top:0,behavior:window.matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'}));
   updateScroll();
 })();
+</script>
+
+<script>
+/* Mostrar el glosario al seleccionar un término subrayado. */
+document.addEventListener('click', function (event) {
+  const term = event.target.closest('a.k-term');
+  const glossaryLink = event.target.closest('a[href="#k-glosario"]');
+  if (term || glossaryLink) {
+    const glossary = document.getElementById('k-glosario');
+    if (glossary) glossary.open = true;
+  }
+});
 </script>
 </body>
 </html>
